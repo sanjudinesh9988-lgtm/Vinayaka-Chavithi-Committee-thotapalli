@@ -1,2792 +1,2782 @@
-```html  
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  
-<title>Vinayaka Chavithi Committee member Thotatapalli</title>  
-  
-<style>  
-  
-* {  
-    margin: 0;  
-    padding: 0;  
-    box-sizing: border-box;  
-    scroll-behavior: smooth;  
-}  
-  
-body {  
-    font-family: Arial, sans-serif;  
-    background: #f4f6f8;  
-    color: #222;  
-}  
-  
-/* ================= HEADER ================= */  
-  
-header {  
-    background: #7b1e00;  
-    color: white;  
-    padding: 15px 5%;  
-    position: sticky;  
-    top: 0;  
-    z-index: 1000;  
-  
-    display: flex;  
-    justify-content: space-between;  
-    align-items: center;  
-}  
-  
-.logo {  
-    font-size: 22px;  
-    font-weight: bold;  
-}  
-  
-nav a {  
-    color: white;  
-    text-decoration: none;  
-    margin-left: 15px;  
-    font-weight: bold;  
-}  
-  
-nav a:hover {  
-    color: #ffd700;  
-}  
-  
-/* ================= HERO ================= */  
-  
-.hero {  
-    min-height: 430px;  
-  
-    background:  
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),  
-    url("ganesh.jpg") center/cover;  
-  
-    display: flex;  
-    justify-content: center;  
-    align-items: center;  
-  
-    text-align: center;  
-    color: white;  
-    padding: 30px;  
-}  
-  
-.hero h1 {  
-    font-size: 45px;  
-    margin-bottom: 15px;  
-}  
-  
-.hero p {  
-    font-size: 21px;  
-    margin-bottom: 25px;  
-}  
-  
-/* ================= BUTTONS ================= */  
-  
-.btn {  
-    display: inline-block;  
-  
-    padding: 11px 18px;  
-  
-    background: #ffd700;  
-    color: #222;  
-  
-    border: none;  
-    border-radius: 6px;  
-  
-    font-weight: bold;  
-    cursor: pointer;  
-  
-    margin: 4px;  
-}  
-  
-.btn:hover {  
-    background: #ffb700;  
-}  
-  
-.edit-btn {  
-    background: #2196f3;  
-    color: white;  
-}  
-  
-.delete-btn {  
-    background: #d32f2f;  
-    color: white;  
-}  
-  
-.save-btn {  
-    background: #2e7d32;  
-    color: white;  
-}  
-  
-.cancel-btn {  
-    background: #757575;  
-    color: white;  
-}  
-  
-/* ================= SECTIONS ================= */  
-  
-section {  
-    padding: 50px 6%;  
-}  
-  
-.section-title {  
-    text-align: center;  
-    color: #7b1e00;  
-    margin-bottom: 30px;  
-    font-size: 30px;  
-}  
-  
-/* ================= CARDS ================= */  
-  
-.cards {  
-    display: grid;  
-    grid-template-columns:  
-    repeat(auto-fit,minmax(220px,1fr));  
-  
-    gap: 20px;  
-}  
-  
-.card {  
-    background: white;  
-  
-    padding: 25px;  
-  
-    border-radius: 10px;  
-  
-    box-shadow:  
-    0 3px 10px rgba(0,0,0,.12);  
-  
-    text-align: center;  
-}  
-  
-.card h3 {  
-    color: #7b1e00;  
-    margin-bottom: 10px;  
-}  
-  
-/* ================= TABLE ================= */  
-  
-.table-container {  
-    overflow-x: auto;  
-}  
-  
-table {  
-    width: 100%;  
-  
-    border-collapse: collapse;  
-  
-    background: white;  
-  
-    box-shadow:  
-    0 2px 8px rgba(0,0,0,.1);  
-}  
-  
-th {  
-    background: #7b1e00;  
-    color: white;  
-}  
-  
-th,  
-td {  
-    padding: 10px;  
-  
-    border: 1px solid #ddd;  
-  
-    text-align: center;  
-}  
-  
-tr:nth-child(even) {  
-    background: #f9f9f9;  
-}  
-  
-.action-cell {  
-    min-width: 160px;  
-}  
-  
-/* ================= FORMS ================= */  
-  
-.form-box {  
-    background: white;  
-  
-    padding: 25px;  
-  
-    border-radius: 10px;  
-  
-    box-shadow:  
-    0 3px 10px rgba(0,0,0,.1);  
-  
-    margin-bottom: 25px;  
-}  
-  
-.form-box h2 {  
-    color: #7b1e00;  
-    margin-bottom: 15px;  
-}  
-  
-input,  
-textarea,  
-select {  
-    width: 100%;  
-  
-    padding: 11px;  
-  
-    margin: 7px 0 14px;  
-  
-    border:  
-    1px solid #bbb;  
-  
-    border-radius: 5px;  
-}  
-  
-textarea {  
-    min-height: 100px;  
-}  
-  
-.form-row {  
-    display: grid;  
-  
-    grid-template-columns:  
-    repeat(auto-fit,minmax(180px,1fr));  
-  
-    gap: 10px;  
-}  
-  
-/* ================= GALLERY ================= */  
-  
-.gallery {  
-    display: grid;  
-  
-    grid-template-columns:  
-    repeat(auto-fit,minmax(220px,1fr));  
-  
-    gap: 20px;  
-}  
-  
-.gallery-item {  
-    background: white;  
-  
-    padding: 10px;  
-  
-    border-radius: 10px;  
-  
-    box-shadow:  
-    0 3px 8px rgba(0,0,0,.2);  
-  
-    text-align: center;  
-}  
-  
-.gallery img {  
-    width: 100%;  
-    height: 220px;  
-  
-    object-fit: cover;  
-  
-    border-radius: 8px;  
-}  
-  
-.photo-buttons {  
-    padding-top: 8px;  
-}  
-  
-/* ================= SUMMARY ================= */  
-  
-.summary {  
-    display: grid;  
-  
-    grid-template-columns:  
-    repeat(auto-fit,minmax(180px,1fr));  
-  
-    gap: 15px;  
-  
-    margin-bottom: 25px;  
-}  
-  
-.summary-box {  
-    background: white;  
-  
-    padding: 20px;  
-  
-    text-align: center;  
-  
-    border-radius: 10px;  
-  
-    box-shadow:  
-    0 3px 8px rgba(0,0,0,.1);  
-}  
-  
-.summary-box h2 {  
-    color: #7b1e00;  
-}  
-  
-/* ================= ADMIN ================= */  
-  
-.admin {  
-    background: #222;  
-    color: white;  
-}  
-  
-.admin > .section-title {  
-    color: #ffd700;  
-}  
-  
-.admin .form-box {  
-    color: #222;  
-}  
-  
-/* ================= EDIT ROW ================= */  
-  
-.edit-row {  
-    background: #fff8dc !important;  
-}  
-  
-.edit-row input {  
-    margin: 2px;  
-    padding: 7px;  
-}  
-  
-/* ================= FOOTER ================= */  
-  
-footer {  
-    background: #7b1e00;  
-  
-    color: white;  
-  
-    text-align: center;  
-  
-    padding: 25px;  
-}  
-  
-/* ================= MOBILE ================= */  
-  
-@media(max-width:768px) {  
-  
-    header {  
-        flex-direction: column;  
-        gap: 12px;  
-    }  
-  
-    nav {  
-        display: flex;  
-        flex-wrap: wrap;  
-        justify-content: center;  
-        gap: 6px;  
-    }  
-  
-    nav a {  
-        margin-left: 4px;  
-        font-size: 12px;  
-    }  
-  
-    .hero h1 {  
-        font-size: 32px;  
-    }  
-  
-    .hero p {  
-        font-size: 17px;  
-    }  
-  
-    th,  
-    td {  
-        font-size: 13px;  
-        padding: 7px;  
-    }  
-  
-}  
-  
-</style>  
-  
-</head>  
-  
-<body>  
-  
-  
-<!-- ================= HEADER ================= -->  
-  
-<header>  
-  
-<div class="logo">  
-🕉️ Vinayaka Chavithi Committee  
-</div>  
-  
-<nav>  
-  
-<a href="#home">Home</a>  
-  
-<a href="#committee">  
-Committee  
-</a>  
-  
-<a href="#households">  
-Households  
-</a>  
-  
-<a href="#donations">  
-Donations  
-</a>  
-  
-<a href="#program">  
-Program  
-</a>  
-  
-<a href="#gallery">  
-Gallery  
-</a>  
-  
-<a href="#contact">  
-Contact  
-</a>  
-  
-<a href="#admin">  
-Admin  
-</a>  
-  
-</nav>  
-  
-</header>  
-  
-  
-<!-- ================= HOME ================= -->  
-  
-<section class="hero" id="home">  
-  
-<div>  
-  
-<h1>  
-🕉️ Vinayaka Chavithi Committee  
-</h1>  
-  
-<p>  
-Thotatapalli  
-</p>  
-  
-<p>  
-Welcome to our Vinayaka Chavithi celebrations  
-</p>  
-  
-<a href="#program" class="btn">  
-View Festival Program  
-</a>  
-  
-</div>  
-  
-</section>  
-  
-  
-<!-- ================= ABOUT ================= -->  
-  
-<section>  
-  
-<h2 class="section-title">  
-🙏 About Vinayaka Chavithi  
-</h2>  
-  
-<div class="card">  
-  
-<p>  
-We warmly welcome everyone to our Vinayaka Chavithi celebrations.  
-This website/app is created for managing committee members,  
-village households, donations, festival programs and celebration  
-photos.  
-</p>  
-  
-<br>  
-  
-<p>  
-<strong>  
-🙏 Ganapati Bappa Morya! 🙏  
-</strong>  
-</p>  
-  
-</div>  
-  
-</section>  
-  
-  
-<!-- ================= COMMITTEE ================= -->  
-  
-<section id="committee">  
-  
-<h2 class="section-title">  
-👥 Committee Members  
-</h2>  
-  
-<div class="table-container">  
-  
-<table>  
-  
-<thead>  
-  
-<tr>  
-  
-<th>S.No</th>  
-  
-<th>Name</th>  
-  
-<th>Designation</th>  
-  
-<th>Mobile Number</th>  
-  
-<th>Actions</th>  
-  
-</tr>  
-  
-</thead>  
-  
-<tbody id="committeeTable">  
-</tbody>  
-  
-</table>  
-  
-</div>  
-  
-</section>  
-  
-  
-<!-- ================= HOUSEHOLDS ================= -->  
-  
-<section id="households">  
-  
-<h2 class="section-title">  
-🏠 Village Household List  
-</h2>  
-  
-<div class="summary">  
-  
-<div class="summary-box">  
-  
-<h2 id="houseCount">  
-0  
-</h2>  
-  
-<p>  
-Total Households  
-</p>  
-  
-</div>  
-  
-<div class="summary-box">  
-  
-<h2 id="houseContribution">  
-₹0  
-</h2>  
-  
-<p>  
-Total Household Contribution  
-</p>  
-  
-</div>  
-  
-</div>  
-  
-  
-<div class="table-container">  
-  
-<table>  
-  
-<thead>  
-  
-<tr>  
-  
-<th>S.No</th>  
-  
-<th>House No.</th>  
-  
-<th>Family / Household Name</th>  
-  
-<th>Mobile</th>  
-  
-<th>Contribution</th>  
-  
-<th>Actions</th>  
-  
-</tr>  
-  
-</thead>  
-  
-<tbody id="householdTable">  
-</tbody>  
-  
-</table>  
-  
-</div>  
-  
-</section>  
-  
-  
-<!-- ================= DONATIONS ================= -->  
-  
-<section id="donations">  
-  
-<h2 class="section-title">  
-💰 Donations  
-</h2>  
-  
-<div class="summary">  
-  
-<div class="summary-box">  
-  
-<h2 id="donorCount">  
-0  
-</h2>  
-  
-<p>  
-Total Donors  
-</p>  
-  
-</div>  
-  
-<div class="summary-box">  
-  
-<h2 id="totalDonation">  
-₹0  
-</h2>  
-  
-<p>  
-Total Donation  
-</p>  
-  
-</div>  
-  
-</div>  
-  
-  
-<div class="table-container">  
-  
-<table>  
-  
-<thead>  
-  
-<tr>  
-  
-<th>S.No</th>  
-  
-<th>Donor Name</th>  
-  
-<th>Mobile</th>  
-  
-<th>Amount</th>  
-  
-<th>Date</th>  
-  
-<th>Reference</th>  
-  
-<th>Actions</th>  
-  
-</tr>  
-  
-</thead>  
-  
-<tbody id="donationTable">  
-</tbody>  
-  
-</table>  
-  
-</div>  
-  
-</section>  
-  
-  
-<!-- ================= PROGRAM ================= -->  
-  
-<section id="program">  
-  
-<h2 class="section-title">  
-📅 Festival Program  
-</h2>  
-  
-<div class="cards">  
-  
-<div class="card">  
-  
-<h3>  
-🙏 Ganesh Installation  
-</h3>  
-  
-<p>  
-Morning Pooja and Ganesh Pratishta  
-</p>  
-  
-</div>  
-  
-  
-<div class="card">  
-  
-<h3>  
-🪔 Daily Pooja  
-</h3>  
-  
-<p>  
-Daily Ganesh Pooja and Aarti  
-</p>  
-  
-</div>  
-  
-  
-<div class="card">  
-  
-<h3>  
-🎭 Cultural Program  
-</h3>  
-  
-<p>  
-Devotional and cultural activities  
-</p>  
-  
-</div>  
-  
-  
-<div class="card">  
-  
-<h3>  
-🍚 Annadanam  
-</h3>  
-  
-<p>  
-Community food distribution  
-</p>  
-  
-</div>  
-  
-  
-<div class="card">  
-  
-<h3>  
-🥁 Nimajjanam  
-</h3>  
-  
-<p>  
-Ganesh Visarjan procession  
-</p>  
-  
-</div>  
-  
-</div>  
-  
-</section>  
-  
-  
-<!-- ================= GALLERY ================= -->  
-  
-<section id="gallery">  
-  
-<h2 class="section-title">  
-📸 Gallery  
-</h2>  
-  
-<div class="gallery">  
-  
-  
-<div class="gallery-item">  
-  
-<img id="photo1"  
-src="ganesh.jpg"  
-alt="Vinayaka">  
-  
-<div class="photo-buttons">  
-  
-<input  
-type="file"  
-id="file1"  
-accept="image/*"  
-onchange="changeImage(event,'photo1','file1')">  
-  
-<br>  
-  
-<button  
-class="btn delete-btn"  
-onclick="deleteImage('photo1')">  
-  
-🗑️ Delete Photo  
-  
-</button>  
-  
-</div>  
-  
-</div>  
-  
-  
-<div class="gallery-item">  
-  
-<img id="photo2"  
-src="festival.jpg"  
-alt="Festival">  
-  
-<div class="photo-buttons">  
-  
-<input  
-type="file"  
-id="file2"  
-accept="image/*"  
-onchange="changeImage(event,'photo2','file2')">  
-  
-<br>  
-  
-<button  
-class="btn delete-btn"  
-onclick="deleteImage('photo2')">  
-  
-🗑️ Delete Photo  
-  
-</button>  
-  
-</div>  
-  
-</div>  
-  
-  
-<div class="gallery-item">  
-  
-<img id="photo3"  
-src="committee.jpg"  
-alt="Committee">  
-  
-<div class="photo-buttons">  
-  
-<input  
-type="file"  
-id="file3"  
-accept="image/*"  
-onchange="changeImage(event,'photo3','file3')">  
-  
-<br>  
-  
-<button  
-class="btn delete-btn"  
-onclick="deleteImage('photo3')">  
-  
-🗑️ Delete Photo  
-  
-</button>  
-  
-</div>  
-  
-</div>  
-  
-  
-<div class="gallery-item">  
-  
-<img id="photo4"  
-src="pooja.jpg"  
-alt="Pooja">  
-  
-<div class="photo-buttons">  
-  
-<input  
-type="file"  
-id="file4"  
-accept="image/*"  
-onchange="changeImage(event,'photo4','file4')">  
-  
-<br>  
-  
-<button  
-class="btn delete-btn"  
-onclick="deleteImage('photo4')">  
-  
-🗑️ Delete Photo  
-  
-</button>  
-  
-</div>  
-  
-</div>  
-  
-</div>  
-  
-<p id="imageStatus"  
-style="text-align:center;margin-top:20px;font-weight:bold;">  
-</p>  
-  
-</section>  
-  
-  
-<!-- ================= CONTACT ================= -->  
-  
-<section id="contact">  
-  
-<h2 class="section-title">  
-📞 Contact Committee  
-</h2>  
-  
-<div class="cards">  
-  
-  
-<div class="card">  
-  
-<h3>  
-📍 Address  
-</h3>  
-  
-<p id="addressText">  
-Thotatapalli, Andhra Pradesh  
-</p>  
-  
-</div>  
-  
-  
-<div class="card">  
-  
-<h3>  
-📱 Phone  
-</h3>  
-  
-<p id="phoneText">  
-+91 XXXXXXXXXX  
-</p>  
-  
-</div>  
-  
-  
-<div class="card">  
-  
-<h3>  
-📧 Email  
-</h3>  
-  
-<p id="emailText">  
-vinayakachavithicommittee@gmail.com  
-</p>  
-  
-</div>  
-  
-</div>  
-  
-</section>  
-  
-  
-<!-- ================= ADMIN ================= -->  
-  
-<section id="admin" class="admin">  
-  
-<h2 class="section-title">  
-⚙️ Admin / Edit Website  
-</h2>  
-  
-  
-<!-- ================= ADD MEMBER ================= -->  
-  
-<div class="form-box">  
-  
-<h2>  
-👥 Add Committee Member  
-</h2>  
-  
-<div class="form-row">  
-  
-<div>  
-  
-<label>  
-Name  
-</label>  
-  
-<input  
-type="text"  
-id="memberName"  
-placeholder="Member name">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Designation  
-</label>  
-  
-<input  
-type="text"  
-id="memberDesignation"  
-placeholder="President / Secretary">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Mobile  
-</label>  
-  
-<input  
-type="text"  
-id="memberMobile"  
-placeholder="Mobile number">  
-  
-</div>  
-  
-</div>  
-  
-  
-<button  
-class="btn save-btn"  
-onclick="addMember()">  
-  
-➕ Add Member  
-  
-</button>  
-  
-<button  
-class="btn delete-btn"  
-onclick="clearMembers()">  
-  
-🗑️ Delete All Members  
-  
-</button>  
-  
-</div>  
-  
-  
-<!-- ================= ADD HOUSEHOLD ================= -->  
-  
-<div class="form-box">  
-  
-<h2>  
-🏠 Add Village Household  
-</h2>  
-  
-<div class="form-row">  
-  
-  
-<div>  
-  
-<label>  
-House Number  
-</label>  
-  
-<input  
-type="text"  
-id="houseNo"  
-placeholder="House No.">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Family Name  
-</label>  
-  
-<input  
-type="text"  
-id="familyName"  
-placeholder="Family name">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Mobile  
-</label>  
-  
-<input  
-type="text"  
-id="familyMobile"  
-placeholder="Mobile number">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Contribution  
-</label>  
-  
-<input  
-type="number"  
-id="familyContribution"  
-placeholder="Amount">  
-  
-</div>  
-  
-</div>  
-  
-  
-<button  
-class="btn save-btn"  
-onclick="addHousehold()">  
-  
-➕ Add Household  
-  
-</button>  
-  
-<button  
-class="btn delete-btn"  
-onclick="clearHouseholds()">  
-  
-🗑️ Delete All Households  
-  
-</button>  
-  
-</div>  
-  
-  
-<!-- ================= ADD DONATION ================= -->  
-  
-<div class="form-box">  
-  
-<h2>  
-💰 Add Donation  
-</h2>  
-  
-<div class="form-row">  
-  
-  
-<div>  
-  
-<label>  
-Donor Name  
-</label>  
-  
-<input  
-type="text"  
-id="donorName"  
-placeholder="Donor name">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Mobile  
-</label>  
-  
-<input  
-type="text"  
-id="donorMobile"  
-placeholder="Mobile">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Amount  
-</label>  
-  
-<input  
-type="number"  
-id="donorAmount"  
-placeholder="Amount">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Date  
-</label>  
-  
-<input  
-type="date"  
-id="donorDate">  
-  
-</div>  
-  
-  
-<div>  
-  
-<label>  
-Reference  
-</label>  
-  
-<input  
-type="text"  
-id="donorReference"  
-placeholder="Receipt / UPI reference">  
-  
-</div>  
-  
-</div>  
-  
-  
-<button  
-class="btn save-btn"  
-onclick="addDonation()">  
-  
-➕ Add Donation  
-  
-</button>  
-  
-<button  
-class="btn delete-btn"  
-onclick="clearDonations()">  
-  
-🗑️ Delete All Donations  
-  
-</button>  
-  
-</div>  
-  
-  
-<!-- ================= CONTACT EDIT ================= -->  
-  
-<div class="form-box">  
-  
-<h2>  
-📞 Edit Contact Information  
-</h2>  
-  
-<label>  
-Address  
-</label>  
-  
-<textarea id="editAddress"></textarea>  
-  
-  
-<label>  
-Phone  
-</label>  
-  
-<input  
-type="text"  
-id="editPhone">  
-  
-  
-<label>  
-Email  
-</label>  
-  
-<input  
-type="text"  
-id="editEmail">  
-  
-  
-<button  
-class="btn save-btn"  
-onclick="saveContact()">  
-  
-💾 Save Contact  
-  
-</button>  
-  
-</div>  
-  
-  
-<!-- ================= DATA BACKUP ================= -->  
-  
-<div class="form-box">  
-  
-<h2>  
-💾 Data Backup  
-</h2>  
-  
-<p>  
-Save a backup of your members, households, donations and contact information.  
-</p>  
-  
-<br>  
-  
-<button  
-class="btn save-btn"  
-onclick="exportData()">  
-  
-⬇️ Download Backup  
-  
-</button>  
-  
-<input  
-type="file"  
-id="importFile"  
-accept=".json"  
-onchange="importData(event)">  
-  
-</div>  
-  
-  
-<!-- ================= RESET ================= -->  
-  
-<div class="form-box">  
-  
-<h2>  
-⚠️ Website Data  
-</h2>  
-  
-<p>  
-Use this button only if you want to remove all saved data.  
-</p>  
-  
-<br>  
-  
-<button  
-class="btn delete-btn"  
-onclick="resetAllData()">  
-  
-🔄 Reset All Data  
-  
-</button>  
-  
-</div>  
-  
-</section>  
-  
-  
-<!-- ================= FOOTER ================= -->  
-  
-<footer>  
-  
-<p>  
-🙏 Ganapati Bappa Morya! 🙏  
-</p>  
-  
-<br>  
-  
-<p>  
-© 2026 Vinayaka Chavithi Committee - Thotatapalli  
-</p>  
-  
-</footer>  
-  
-  
-<script>  
-  
-/* =====================================================  
-   DATA  
-===================================================== */  
-  
-let members =  
-JSON.parse(localStorage.getItem("vcMembers")) || [];  
-  
-let households =  
-JSON.parse(localStorage.getItem("vcHouseholds")) || [];  
-  
-let donations =  
-JSON.parse(localStorage.getItem("vcDonations")) || [];  
-  
-  
-/* =====================================================  
-   SECURITY / HTML ESCAPE  
-===================================================== */  
-  
-function escapeHTML(value) {  
-  
-return String(value ?? "")  
-.replace(/&/g,"&amp;")  
-.replace(/</g,"&lt;")  
-.replace(/>/g,"&gt;")  
-.replace(/"/g,"&quot;")  
-.replace(/'/g,"&#039;");  
-  
-}  
-  
-  
-/* =====================================================  
-   COMMITTEE DISPLAY  
-===================================================== */  
-  
-function displayMembers() {  
-  
-const table =  
-document.getElementById("committeeTable");  
-  
-table.innerHTML = "";  
-  
-members.forEach((m,index) => {  
-  
-table.innerHTML += `  
-  
-<tr>  
-  
-<td>  
-${index + 1}  
-</td>  
-  
-<td>  
-${escapeHTML(m.name)}  
-</td>  
-  
-<td>  
-${escapeHTML(m.designation)}  
-</td>  
-  
-<td>  
-${escapeHTML(m.mobile)}  
-</td>  
-  
-<td class="action-cell">  
-  
-<button  
-class="btn edit-btn"  
-onclick="editMember(${index})">  
-  
-✏️ Edit  
-  
-</button>  
-  
-<button  
-class="btn delete-btn"  
-onclick="deleteMember(${index})">  
-  
-🗑️ Delete  
-  
-</button>  
-  
-</td>  
-  
-</tr>  
-  
-`;  
-  
-});  
-  
-}  
-  
-  
-/* =====================================================  
-   ADD MEMBER  
-===================================================== */  
-  
-function addMember() {  
-  
-const name =  
-document.getElementById("memberName").value.trim();  
-  
-const designation =  
-document.getElementById("memberDesignation").value.trim();  
-  
-const mobile =  
-document.getElementById("memberMobile").value.trim();  
-  
-  
-if(!name || !designation) {  
-  
-alert(  
-"Please enter member name and designation."  
-);  
-  
-return;  
-  
-}  
-  
-  
-members.push({  
-  
-name:name,  
-  
-designation:designation,  
-  
-mobile:mobile  
-  
-});  
-  
-  
-saveMembers();  
-  
-  
-document.getElementById("memberName").value = "";  
-  
-document.getElementById("memberDesignation").value = "";  
-  
-document.getElementById("memberMobile").value = "";  
-  
-alert(  
-"Committee member added successfully."  
-);  
-  
-}  
-  
-  
-/* =====================================================  
-   EDIT MEMBER  
-===================================================== */  
-  
-function editMember(index) {  
-  
-const m =  
-members[index];  
-  
-const table =  
-document.getElementById("committeeTable");  
-  
-  
-table.rows[index].innerHTML = `  
-  
-<td>  
-${index + 1}  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editMemberName${index}"  
-value="${escapeHTML(m.name)}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editMemberDesignation${index}"  
-value="${escapeHTML(m.designation)}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editMemberMobile${index}"  
-value="${escapeHTML(m.mobile)}">  
-  
-</td>  
-  
-<td>  
-  
-<button  
-class="btn save-btn"  
-onclick="saveMemberEdit(${index})">  
-  
-💾 Save  
-  
-</button>  
-  
-<button  
-class="btn cancel-btn"  
-onclick="displayMembers()">  
-  
-❌ Cancel  
-  
-</button>  
-  
-</td>  
-  
-`;  
-  
-}  
-  
-  
-/* =====================================================  
-   SAVE MEMBER EDIT  
-===================================================== */  
-  
-function saveMemberEdit(index) {  
-  
-members[index].name =  
-document.getElementById(  
-"editMemberName" + index  
-).value.trim();  
-  
-members[index].designation =  
-document.getElementById(  
-"editMemberDesignation" + index  
-).value.trim();  
-  
-members[index].mobile =  
-document.getElementById(  
-"editMemberMobile" + index  
-).value.trim();  
-  
-  
-if(!members[index].name ||  
-   !members[index].designation) {  
-  
-alert(  
-"Name and designation are required."  
-);  
-  
-return;  
-  
-}  
-  
-  
-saveMembers();  
-  
-alert(  
-"Committee member updated successfully."  
-);  
-  
-}  
-  
-  
-/* =====================================================  
-   DELETE MEMBER  
-===================================================== */  
-  
-function deleteMember(index) {  
-  
-if(!confirm(  
-"Are you sure you want to delete this committee member?"  
-)) return;  
-  
-  
-members.splice(index,1);  
-  
-saveMembers();  
-  
-}  
-  
-  
-/* =====================================================  
-   SAVE MEMBERS  
-===================================================== */  
-  
-function saveMembers() {  
-  
-localStorage.setItem(  
-"vcMembers",  
-JSON.stringify(members)  
-);  
-  
-displayMembers();  
-  
-}  
-  
-  
-/* =====================================================  
-   CLEAR MEMBERS  
-===================================================== */  
-  
-function clearMembers() {  
-  
-if(!confirm(  
-"Delete ALL committee members?"  
-)) return;  
-  
-  
-members = [];  
-  
-saveMembers();  
-  
-}  
-  
-  
-/* =====================================================  
-   HOUSEHOLD DISPLAY  
-===================================================== */  
-  
-function displayHouseholds() {  
-  
-const table =  
-document.getElementById("householdTable");  
-  
-table.innerHTML = "";  
-  
-let total = 0;  
-  
-  
-households.forEach((h,index) => {  
-  
-total += Number(h.contribution) || 0;  
-  
-  
-table.innerHTML += `  
-  
-<tr>  
-  
-<td>  
-${index + 1}  
-</td>  
-  
-<td>  
-${escapeHTML(h.houseNo)}  
-</td>  
-  
-<td>  
-${escapeHTML(h.familyName)}  
-</td>  
-  
-<td>  
-${escapeHTML(h.mobile)}  
-</td>  
-  
-<td>  
-₹${Number(h.contribution || 0)  
-.toLocaleString("en-IN")}  
-</td>  
-  
-<td class="action-cell">  
-  
-<button  
-class="btn edit-btn"  
-onclick="editHousehold(${index})">  
-  
-✏️ Edit  
-  
-</button>  
-  
-<button  
-class="btn delete-btn"  
-onclick="deleteHousehold(${index})">  
-  
-🗑️ Delete  
-  
-</button>  
-  
-</td>  
-  
-</tr>  
-  
-`;  
-  
-});  
-  
-  
-document.getElementById("houseCount")  
-.innerText =  
-households.length;  
-  
-  
-document.getElementById("houseContribution")  
-.innerText =  
-"₹" + total.toLocaleString("en-IN");  
-  
-}  
-  
-  
-/* =====================================================  
-   ADD HOUSEHOLD  
-===================================================== */  
-  
-function addHousehold() {  
-  
-const houseNo =  
-document.getElementById("houseNo").value.trim();  
-  
-const familyName =  
-document.getElementById("familyName").value.trim();  
-  
-const mobile =  
-document.getElementById("familyMobile").value.trim();  
-  
-const contribution =  
-document.getElementById("familyContribution").value;  
-  
-  
-if(!houseNo || !familyName) {  
-  
-alert(  
-"Please enter house number and family name."  
-);  
-  
-return;  
-  
-}  
-  
-  
-households.push({  
-  
-houseNo:houseNo,  
-  
-familyName:familyName,  
-  
-mobile:mobile,  
-  
-contribution:contribution || 0  
-  
-});  
-  
-  
-saveHouseholds();  
-  
-  
-document.getElementById("houseNo").value = "";  
-  
-document.getElementById("familyName").value = "";  
-  
-document.getElementById("familyMobile").value = "";  
-  
-document.getElementById("familyContribution").value = "";  
-  
-  
-alert(  
-"Household added successfully."  
-);  
-  
-}  
-  
-  
-/* =====================================================  
-   EDIT HOUSEHOLD  
-===================================================== */  
-  
-function editHousehold(index) {  
-  
-const h =  
-households[index];  
-  
-const table =  
-document.getElementById("householdTable");  
-  
-  
-table.rows[index].innerHTML = `  
-  
-<td>  
-${index + 1}  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editHouseNo${index}"  
-value="${escapeHTML(h.houseNo)}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editFamilyName${index}"  
-value="${escapeHTML(h.familyName)}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editFamilyMobile${index}"  
-value="${escapeHTML(h.mobile)}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="number"  
-id="editFamilyContribution${index}"  
-value="${Number(h.contribution) || 0}">  
-  
-</td>  
-  
-<td>  
-  
-<button  
-class="btn save-btn"  
-onclick="saveHouseholdEdit(${index})">  
-  
-💾 Save  
-  
-</button>  
-  
-<button  
-class="btn cancel-btn"  
-onclick="displayHouseholds()">  
-  
-❌ Cancel  
-  
-</button>  
-  
-</td>  
-  
-`;  
-  
-}  
-  
-  
-/* =====================================================  
-   SAVE HOUSEHOLD EDIT  
-===================================================== */  
-  
-function saveHouseholdEdit(index) {  
-  
-const houseNo =  
-document.getElementById(  
-"editHouseNo" + index  
-).value.trim();  
-  
-const familyName =  
-document.getElementById(  
-"editFamilyName" + index  
-).value.trim();  
-  
-const mobile =  
-document.getElementById(  
-"editFamilyMobile" + index  
-).value.trim();  
-  
-const contribution =  
-document.getElementById(  
-"editFamilyContribution" + index  
-).value;  
-  
-  
-if(!houseNo || !familyName) {  
-  
-alert(  
-"House number and family name are required."  
-);  
-  
-return;  
-  
-}  
-  
-  
-households[index] = {  
-  
-houseNo:houseNo,  
-  
-familyName:familyName,  
-  
-mobile:mobile,  
-  
-contribution:contribution || 0  
-  
-};  
-  
-  
-saveHouseholds();  
-  
-alert(  
-"Household updated successfully."  
-);  
-  
-}  
-  
-  
-/* =====================================================  
-   DELETE HOUSEHOLD  
-===================================================== */  
-  
-function deleteHousehold(index) {  
-  
-if(!confirm(  
-"Are you sure you want to delete this household?"  
-)) return;  
-  
-  
-households.splice(index,1);  
-  
-saveHouseholds();  
-  
-}  
-  
-  
-/* =====================================================  
-   SAVE HOUSEHOLDS  
-===================================================== */  
-  
-function saveHouseholds() {  
-  
-localStorage.setItem(  
-"vcHouseholds",  
-JSON.stringify(households)  
-);  
-  
-displayHouseholds();  
-  
-}  
-  
-  
-/* =====================================================  
-   CLEAR HOUSEHOLDS  
-===================================================== */  
-  
-function clearHouseholds() {  
-  
-if(!confirm(  
-"Delete ALL household records?"  
-)) return;  
-  
-  
-households = [];  
-  
-saveHouseholds();  
-  
-}  
-  
-  
-/* =====================================================  
-   DONATION DISPLAY  
-===================================================== */  
-  
-function displayDonations() {  
-  
-const table =  
-document.getElementById("donationTable");  
-  
-table.innerHTML = "";  
-  
-let total = 0;  
-  
-  
-donations.forEach((d,index) => {  
-  
-total += Number(d.amount) || 0;  
-  
-  
-table.innerHTML += `  
-  
-<tr>  
-  
-<td>  
-${index + 1}  
-</td>  
-  
-<td>  
-${escapeHTML(d.name)}  
-</td>  
-  
-<td>  
-${escapeHTML(d.mobile)}  
-</td>  
-  
-<td>  
-₹${Number(d.amount || 0)  
-.toLocaleString("en-IN")}  
-</td>  
-  
-<td>  
-${escapeHTML(d.date)}  
-</td>  
-  
-<td>  
-${escapeHTML(d.reference)}  
-</td>  
-  
-<td class="action-cell">  
-  
-<button  
-class="btn edit-btn"  
-onclick="editDonation(${index})">  
-  
-✏️ Edit  
-  
-</button>  
-  
-<button  
-class="btn delete-btn"  
-onclick="deleteDonation(${index})">  
-  
-🗑️ Delete  
-  
-</button>  
-  
-</td>  
-  
-</tr>  
-  
-`;  
-  
-});  
-  
-  
-document.getElementById("donorCount")  
-.innerText =  
-donations.length;  
-  
-  
-document.getElementById("totalDonation")  
-.innerText =  
-"₹" + total.toLocaleString("en-IN");  
-  
-}  
-  
-  
-/* =====================================================  
-   ADD DONATION  
-===================================================== */  
-  
-function addDonation() {  
-  
-const name =  
-document.getElementById("donorName").value.trim();  
-  
-const mobile =  
-document.getElementById("donorMobile").value.trim();  
-  
-const amount =  
-document.getElementById("donorAmount").value;  
-  
-const date =  
-document.getElementById("donorDate").value;  
-  
-const reference =  
-document.getElementById("donorReference").value.trim();  
-  
-  
-if(!name || !amount) {  
-  
-alert(  
-"Please enter donor name and amount."  
-);  
-  
-return;  
-  
-}  
-  
-  
-donations.push({  
-  
-name:name,  
-  
-mobile:mobile,  
-  
-amount:amount,  
-  
-date:date,  
-  
-reference:reference  
-  
-});  
-  
-  
-saveDonations();  
-  
-  
-document.getElementById("donorName").value = "";  
-  
-document.getElementById("donorMobile").value = "";  
-  
-document.getElementById("donorAmount").value = "";  
-  
-document.getElementById("donorDate").value = "";  
-  
-document.getElementById("donorReference").value = "";  
-  
-  
-alert(  
-"Donation added successfully."  
-);  
-  
-}  
-  
-  
-/* =====================================================  
-   EDIT DONATION  
-===================================================== */  
-  
-function editDonation(index) {  
-  
-const d =  
-donations[index];  
-  
-const table =  
-document.getElementById("donationTable");  
-  
-  
-table.rows[index].innerHTML = `  
-  
-<td>  
-${index + 1}  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editDonorName${index}"  
-value="${escapeHTML(d.name)}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editDonorMobile${index}"  
-value="${escapeHTML(d.mobile)}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="number"  
-id="editDonorAmount${index}"  
-value="${Number(d.amount) || 0}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="date"  
-id="editDonorDate${index}"  
-value="${escapeHTML(d.date)}">  
-  
-</td>  
-  
-<td>  
-  
-<input  
-type="text"  
-id="editDonorReference${index}"  
-value="${escapeHTML(d.reference)}">  
-  
-</td>  
-  
-<td>  
-  
-<button  
-class="btn save-btn"  
-onclick="saveDonationEdit(${index})">  
-  
-💾 Save  
-  
-</button>  
-  
-<button  
-class="btn cancel-btn"  
-onclick="displayDonations()">  
-  
-❌ Cancel  
-  
-</button>  
-  
-</td>  
-  
-`;  
-  
-}  
-  
-  
-/* =====================================================  
-   SAVE DONATION EDIT  
-===================================================== */  
-  
-function saveDonationEdit(index) {  
-  
-donations[index] = {  
-  
-name:  
-document.getElementById(  
-"editDonorName" + index  
-).value.trim(),  
-  
-mobile:  
-document.getElementById(  
-"editDonorMobile" + index  
-).value.trim(),  
-  
-amount:  
-document.getElementById(  
-"editDonorAmount" + index  
-).value,  
-  
-date:  
-document.getElementById(  
-"editDonorDate" + index  
-).value,  
-  
-reference:  
-document.getElementById(  
-"editDonorReference" + index  
-).value.trim()  
-  
-};  
-  
-  
-if(!donations[index].name ||  
-   !donations[index].amount) {  
-  
-alert(  
-"Donor name and amount are required."  
-);  
-  
-return;  
-  
-}  
-  
-  
-saveDonations();  
-  
-alert(  
-"Donation updated successfully."  
-);  
-  
-}  
-  
-  
-/* =====================================================  
-   DELETE DONATION  
-===================================================== */  
-  
-function deleteDonation(index) {  
-  
-if(!confirm(  
-"Are you sure you want to delete this donation?"  
-)) return;  
-  
-  
-donations.splice(index,1);  
-  
-saveDonations();  
-  
-}  
-  
-  
-/* =====================================================  
-   SAVE DONATIONS  
-===================================================== */  
-  
-function saveDonations() {  
-  
-localStorage.setItem(  
-"vcDonations",  
-JSON.stringify(donations)  
-);  
-  
-displayDonations();  
-  
-}  
-  
-  
-/* =====================================================  
-   CLEAR DONATIONS  
-===================================================== */  
-  
-function clearDonations() {  
-  
-if(!confirm(  
-"Delete ALL donation records?"  
-)) return;  
-  
-  
-donations = [];  
-  
-saveDonations();  
-  
-}  
-  
-  
-/* =====================================================  
-   CONTACT  
-===================================================== */  
-  
-function saveContact() {  
-  
-const address =  
-document.getElementById(  
-"editAddress"  
-).value.trim();  
-  
-const phone =  
-document.getElementById(  
-"editPhone"  
-).value.trim();  
-  
-const email =  
-document.getElementById(  
-"editEmail"  
-).value.trim();  
-  
-  
-localStorage.setItem(  
-"vcAddress",  
-address  
-);  
-  
-localStorage.setItem(  
-"vcPhone",  
-phone  
-);  
-  
-localStorage.setItem(  
-"vcEmail",  
-email  
-);  
-  
-  
-loadContact();  
-  
-  
-alert(  
-"Contact information saved successfully."  
-);  
-  
-}  
-  
-  
-function loadContact() {  
-  
-const address =  
-localStorage.getItem("vcAddress") ||  
-"Thotatapalli, Andhra Pradesh";  
-  
-const phone =  
-localStorage.getItem("vcPhone") ||  
-"+91 XXXXXXXXXX";  
-  
-const email =  
-localStorage.getItem("vcEmail") ||  
-"vinayakachavithicommittee@gmail.com";  
-  
-  
-document.getElementById(  
-"addressText"  
-).innerText =  
-address;  
-  
-  
-document.getElementById(  
-"phoneText"  
-).innerText =  
-phone;  
-  
-  
-document.getElementById(  
-"emailText"  
-).innerText =  
-email;  
-  
-  
-document.getElementById(  
-"editAddress"  
-).value =  
-address;  
-  
-  
-document.getElementById(  
-"editPhone"  
-).value =  
-phone;  
-  
-  
-document.getElementById(  
-"editEmail"  
-).value =  
-email;  
-  
-}  
-  
-  
-/* =====================================================  
-   IMAGES  
-===================================================== */  
-  
-function changeImage(  
-event,  
-imageId,  
-fileInputId  
-) {  
-  
-const file =  
-event.target.files[0];  
-  
-if(!file) return;  
-  
-  
-const reader =  
-new FileReader();  
-  
-  
-reader.onload =  
-function(e) {  
-  
-const imageData =  
-e.target.result;  
-  
-  
-document.getElementById(  
-imageId  
-).src =  
-imageData;  
-  
-  
-localStorage.setItem(  
-"vc_" + imageId,  
-imageData  
-);  
-  
-  
-document.getElementById(  
-"imageStatus"  
-).innerText =  
-"✅ Photo updated successfully.";  
-  
-};  
-  
-  
-reader.readAsDataURL(file);  
-  
-}  
-  
-  
-/* =====================================================  
-   LOAD IMAGES  
-===================================================== */  
-  
-function loadImages() {  
-  
-[  
-"photo1",  
-"photo2",  
-"photo3",  
-"photo4"  
-].forEach(id => {  
-  
-const saved =  
-localStorage.getItem(  
-"vc_" + id  
-);  
-  
-if(saved) {  
-  
-document.getElementById(  
-id  
-).src =  
-saved;  
-  
-}  
-  
-});  
-  
-}  
-  
-  
-/* =====================================================  
-   DELETE IMAGE  
-===================================================== */  
-  
-function deleteImage(imageId) {  
-  
-if(!confirm(  
-"Delete this photo?"  
-)) return;  
-  
-  
-localStorage.removeItem(  
-"vc_" + imageId  
-);  
-  
-  
-const defaultImages = {  
-  
-photo1:"ganesh.jpg",  
-  
-photo2:"festival.jpg",  
-  
-photo3:"committee.jpg",  
-  
-photo4:"pooja.jpg"  
-  
-};  
-  
-  
-document.getElementById(  
-imageId  
-).src =  
-defaultImages[imageId];  
-  
-  
-document.getElementById(  
-"imageStatus"  
-).innerText =  
-"🗑️ Saved photo removed. Default image restored.";  
-  
-}  
-  
-  
-/* =====================================================  
-   EXPORT BACKUP  
-===================================================== */  
-  
-function exportData() {  
-  
-const backup = {  
-  
-members:members,  
-  
-households:households,  
-  
-donations:donations,  
-  
-address:  
-localStorage.getItem("vcAddress") || "",  
-  
-phone:  
-localStorage.getItem("vcPhone") || "",  
-  
-email:  
-localStorage.getItem("vcEmail") || ""  
-  
-};  
-  
-  
-const data =  
-JSON.stringify(  
-backup,  
-null,  
-2  
-);  
-  
-  
-const blob =  
-new Blob(  
-[data],  
-{  
-type:"application/json"  
-}  
-);  
-  
-  
-const url =  
-URL.createObjectURL(blob);  
-  
-  
-const link =  
-document.createElement("a");  
-  
-  
-link.href = url;  
-  
-link.download =  
-"Vinayaka-Chavithi-Committee-Backup.json";  
-  
-  
-link.click();  
-  
-  
-URL.revokeObjectURL(url);  
-  
-}  
-  
-  
-/* =====================================================  
-   IMPORT BACKUP  
-===================================================== */  
-  
-function importData(event) {  
-  
-const file =  
-event.target.files[0];  
-  
-if(!file) return;  
-  
-  
-const reader =  
-new FileReader();  
-  
-  
-reader.onload =  
-function(e) {  
-  
-try {  
-  
-const backup =  
-JSON.parse(e.target.result);  
-  
-  
-if(backup.members)  
-members =  
-backup.members;  
-  
-  
-if(backup.households)  
-households =  
-backup.households;  
-  
-  
-if(backup.donations)  
-donations =  
-backup.donations;  
-  
-  
-localStorage.setItem(  
-"vcMembers",  
-JSON.stringify(members)  
-);  
-  
-localStorage.setItem(  
-"vcHouseholds",  
-JSON.stringify(households)  
-);  
-  
-localStorage.setItem(  
-"vcDonations",  
-JSON.stringify(donations)  
-);  
-  
-  
-if(backup.address !== undefined)  
-localStorage.setItem(  
-"vcAddress",  
-backup.address  
-);  
-  
-  
-if(backup.phone !== undefined)  
-localStorage.setItem(  
-"vcPhone",  
-backup.phone  
-);  
-  
-  
-if(backup.email !== undefined)  
-localStorage.setItem(  
-"vcEmail",  
-backup.email  
-);  
-  
-  
-displayMembers();  
-  
-displayHouseholds();  
-  
-displayDonations();  
-  
-loadContact();  
-  
-  
-alert(  
-"✅ Backup restored successfully."  
-);  
-  
-  
-}  
-catch(error) {  
-  
-alert(  
-"❌ Invalid backup file."  
-);  
-  
-}  
-  
-};  
-  
-  
-reader.readAsText(file);  
-  
-}  
-  
-  
-/* =====================================================  
-   RESET ALL  
-===================================================== */  
-  
-function resetAllData() {  
-  
-if(!confirm(  
-"WARNING!\n\nThis will delete ALL members, households, donations, contacts and saved photos.\n\nContinue?"  
-)) return;  
-  
-  
-localStorage.clear();  
-  
-location.reload();  
-  
-}  
-  
-  
-/* =====================================================  
-   START APP  
-===================================================== */  
-  
-displayMembers();  
-  
-displayHouseholds();  
-  
-displayDonations();  
-  
-loadContact();  
-  
-loadImages();  
-  
-</script>  
-  
-</body>  
-</html>  
-```  
-🙏 Ganesh Installation 🪔 Daily Pooja 🎭 Cultural Program 🍚 Annadanam 🥁 Nimajjanam  ple  give  edited opsition in this program 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vinayaka Chavithi Committee member Thotatapalli</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f8;
+    color:#222;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#7b1e00;
+    color:white;
+    padding:15px 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:430px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("ganesh.jpg") center/cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+    padding:30px;
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:21px;
+    margin-bottom:25px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn{
+    display:inline-block;
+    padding:10px 15px;
+    background:#ffd700;
+    color:#222;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:4px;
+}
+
+.btn:hover{
+    background:#ffb700;
+}
+
+.edit-btn{
+    background:#2196f3;
+    color:white;
+}
+
+.delete-btn{
+    background:#d32f2f;
+    color:white;
+}
+
+.save-btn{
+    background:#2e7d32;
+    color:white;
+}
+
+.cancel-btn{
+    background:#757575;
+    color:white;
+}
+
+.add-btn{
+    background:#ff9800;
+    color:white;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:50px 4%;
+}
+
+.section-title{
+    text-align:center;
+    color:#7b1e00;
+    margin-bottom:30px;
+    font-size:30px;
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+    text-align:center;
+}
+
+.card h3{
+    color:#7b1e00;
+    margin-bottom:10px;
+}
+
+/* ================= TABLE ================= */
+
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+th{
+    background:#7b1e00;
+    color:white;
+}
+
+th,
+td{
+    padding:9px;
+    border:1px solid #ddd;
+    text-align:center;
+    white-space:nowrap;
+}
+
+tr:nth-child(even){
+    background:#f9f9f9;
+}
+
+.action-cell{
+    min-width:180px;
+}
+
+/* ================= MONTHLY TABLE ================= */
+
+.monthly-table th{
+    min-width:100px;
+}
+
+.monthly-table .total-column{
+    background:#fff0b3;
+    font-weight:bold;
+    color:#7b1e00;
+}
+
+.month-summary{
+    margin:20px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+}
+
+.month-box{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    text-align:center;
+    box-shadow:0 2px 7px rgba(0,0,0,.1);
+}
+
+.month-box h3{
+    color:#7b1e00;
+    font-size:16px;
+}
+
+.month-box p{
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* ================= FORMS ================= */
+
+.form-box{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+    margin-bottom:25px;
+}
+
+.form-box h2{
+    color:#7b1e00;
+    margin-bottom:15px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:11px;
+    margin:7px 0 14px;
+    border:1px solid #bbb;
+    border-radius:5px;
+}
+
+textarea{
+    min-height:100px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.gallery-item{
+    background:white;
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.photo-buttons{
+    padding-top:8px;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.summary-box{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+}
+
+.summary-box h2{
+    color:#7b1e00;
+}
+
+/* ================= ADMIN ================= */
+
+.admin{
+    background:#222;
+    color:white;
+}
+
+.admin > .section-title{
+    color:#ffd700;
+}
+
+.admin .form-box{
+    color:#222;
+}
+
+/* ================= PROGRAM ================= */
+
+.program-card{
+    position:relative;
+}
+
+.program-date{
+    color:#d32f2f;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.program-time{
+    color:#555;
+    margin-bottom:8px;
+}
+
+.program-description{
+    line-height:1.5;
+}
+
+.program-actions{
+    margin-top:15px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#7b1e00;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:6px;
+    }
+
+    nav a{
+        margin-left:4px;
+        font-size:12px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    th,
+    td{
+        font-size:12px;
+        padding:7px;
+    }
+
+    section{
+        padding:35px 3%;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+🕉️ Vinayaka Chavithi Committee
+</div>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#committee">Committee</a>
+<a href="#households">Households</a>
+<a href="#donations">Donations</a>
+<a href="#program">Program</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#admin">Admin</a>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+<div>
+
+<h1>
+🕉️ Vinayaka Chavithi Committee
+</h1>
+
+<p>
+Thotatapalli
+</p>
+
+<p>
+Welcome to our Vinayaka Chavithi celebrations
+</p>
+
+<a href="#program" class="btn">
+View Festival Program
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section>
+
+<h2 class="section-title">
+🙏 About Vinayaka Chavithi
+</h2>
+
+<div class="card">
+
+<p>
+We warmly welcome everyone to our Vinayaka Chavithi celebrations.
+This website/app is created for managing committee members,
+village households, monthly contributions, donations, festival
+programs and celebration photos.
+</p>
+
+<br>
+
+<p>
+<strong>
+🙏 Ganapati Bappa Morya! 🙏
+</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= COMMITTEE ================= -->
+
+<section id="committee">
+
+<h2 class="section-title">
+👥 Committee Members
+</h2>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>S.No</th>
+<th>Name</th>
+<th>Designation</th>
+<th>Mobile Number</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="committeeTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= HOUSEHOLDS ================= -->
+
+<section id="households">
+
+<h2 class="section-title">
+🏠 Village Household Monthly Contributions
+</h2>
+
+<div class="summary">
+
+<div class="summary-box">
+<h2 id="houseCount">0</h2>
+<p>Total Households</p>
+</div>
+
+<div class="summary-box">
+<h2 id="houseContribution">₹0</h2>
+<p>Total Annual Contribution</p>
+</div>
+
+</div>
+
+
+<!-- MONTHLY GRAND TOTALS -->
+
+<div class="month-summary">
+
+<div class="month-box">
+<h3>January</h3>
+<p id="totalJan">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>February</h3>
+<p id="totalFeb">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>March</h3>
+<p id="totalMar">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>April</h3>
+<p id="totalApr">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>May</h3>
+<p id="totalMay">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>June</h3>
+<p id="totalJun">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>July</h3>
+<p id="totalJul">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>August</h3>
+<p id="totalAug">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>September</h3>
+<p id="totalSep">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>October</h3>
+<p id="totalOct">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>November</h3>
+<p id="totalNov">₹0</p>
+</div>
+
+<div class="month-box">
+<h3>December</h3>
+<p id="totalDec">₹0</p>
+</div>
+
+</div>
+
+
+<div class="table-container">
+
+<table class="monthly-table">
+
+<thead>
+
+<tr>
+
+<th>S.No</th>
+<th>House No.</th>
+<th>Family / Household Name</th>
+<th>Mobile</th>
+
+<th>January</th>
+<th>February</th>
+<th>March</th>
+<th>April</th>
+<th>May</th>
+<th>June</th>
+<th>July</th>
+<th>August</th>
+<th>September</th>
+<th>October</th>
+<th>November</th>
+<th>December</th>
+
+<th>Total</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="householdTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= DONATIONS ================= -->
+
+<section id="donations">
+
+<h2 class="section-title">
+💰 Donations
+</h2>
+
+<div class="summary">
+
+<div class="summary-box">
+<h2 id="donorCount">0</h2>
+<p>Total Donors</p>
+</div>
+
+<div class="summary-box">
+<h2 id="totalDonation">₹0</h2>
+<p>Total Donation</p>
+</div>
+
+</div>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>S.No</th>
+<th>Donor Name</th>
+<th>Mobile</th>
+<th>Amount</th>
+<th>Date</th>
+<th>Reference</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="donationTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROGRAM ================= -->
+
+<section id="program">
+
+<h2 class="section-title">
+📅 Festival Program
+</h2>
+
+<div id="programContainer" class="cards"></div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+<h2 class="section-title">
+📸 Gallery
+</h2>
+
+<div class="gallery">
+
+<div class="gallery-item">
+
+<img id="photo1"
+src="ganesh.jpg"
+alt="Vinayaka">
+
+<div class="photo-buttons">
+
+<input
+type="file"
+id="file1"
+accept="image/*"
+onchange="changeImage(event,'photo1')">
+
+<br>
+
+<button
+class="btn delete-btn"
+onclick="deleteImage('photo1')">
+
+🗑️ Delete Photo
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img id="photo2"
+src="festival.jpg"
+alt="Festival">
+
+<div class="photo-buttons">
+
+<input
+type="file"
+id="file2"
+accept="image/*"
+onchange="changeImage(event,'photo2')">
+
+<br>
+
+<button
+class="btn delete-btn"
+onclick="deleteImage('photo2')">
+
+🗑️ Delete Photo
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img id="photo3"
+src="committee.jpg"
+alt="Committee">
+
+<div class="photo-buttons">
+
+<input
+type="file"
+id="file3"
+accept="image/*"
+onchange="changeImage(event,'photo3')">
+
+<br>
+
+<button
+class="btn delete-btn"
+onclick="deleteImage('photo3')">
+
+🗑️ Delete Photo
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img id="photo4"
+src="pooja.jpg"
+alt="Pooja">
+
+<div class="photo-buttons">
+
+<input
+type="file"
+id="file4"
+accept="image/*"
+onchange="changeImage(event,'photo4')">
+
+<br>
+
+<button
+class="btn delete-btn"
+onclick="deleteImage('photo4')">
+
+🗑️ Delete Photo
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<p id="imageStatus"
+style="text-align:center;margin-top:20px;font-weight:bold;">
+</p>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<h2 class="section-title">
+📞 Contact Committee
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+📍 Address
+</h3>
+
+<p id="addressText">
+Thotatapalli, Andhra Pradesh
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+📱 Phone
+</h3>
+
+<p id="phoneText">
++91 XXXXXXXXXX
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+📧 Email
+</h3>
+
+<p id="emailText">
+vinayakachavithicommittee@gmail.com
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ADMIN ================= -->
+
+<section id="admin" class="admin">
+
+<h2 class="section-title">
+⚙️ Admin / Edit Website
+</h2>
+
+
+<!-- ================= ADD MEMBER ================= -->
+
+<div class="form-box">
+
+<h2>
+👥 Add Committee Member
+</h2>
+
+<div class="form-row">
+
+<div>
+<label>Name</label>
+<input
+type="text"
+id="memberName"
+placeholder="Member name">
+</div>
+
+<div>
+<label>Designation</label>
+<input
+type="text"
+id="memberDesignation"
+placeholder="President / Secretary">
+</div>
+
+<div>
+<label>Mobile</label>
+<input
+type="text"
+id="memberMobile"
+placeholder="Mobile number">
+</div>
+
+</div>
+
+<button
+class="btn save-btn"
+onclick="addMember()">
+➕ Add Member
+</button>
+
+<button
+class="btn delete-btn"
+onclick="clearMembers()">
+🗑️ Delete All Members
+</button>
+
+</div>
+
+
+<!-- ================= ADD HOUSEHOLD ================= -->
+
+<div class="form-box">
+
+<h2>
+🏠 Add Village Household
+</h2>
+
+<p>
+Enter the monthly amount for each month.
+Leave a month as 0 if there is no contribution.
+</p>
+
+<br>
+
+<div class="form-row">
+
+<div>
+<label>House Number</label>
+<input
+type="text"
+id="houseNo"
+placeholder="House No.">
+</div>
+
+<div>
+<label>Family Name</label>
+<input
+type="text"
+id="familyName"
+placeholder="Family name">
+</div>
+
+<div>
+<label>Mobile</label>
+<input
+type="text"
+id="familyMobile"
+placeholder="Mobile number">
+</div>
+
+</div>
+
+
+<h3 style="margin:15px 0;color:#7b1e00;">
+💰 Monthly Amounts
+</h3>
+
+<div class="form-row">
+
+<div>
+<label>January</label>
+<input type="number" id="jan" value="0" min="0">
+</div>
+
+<div>
+<label>February</label>
+<input type="number" id="feb" value="0" min="0">
+</div>
+
+<div>
+<label>March</label>
+<input type="number" id="mar" value="0" min="0">
+</div>
+
+<div>
+<label>April</label>
+<input type="number" id="apr" value="0" min="0">
+</div>
+
+<div>
+<label>May</label>
+<input type="number" id="may" value="0" min="0">
+</div>
+
+<div>
+<label>June</label>
+<input type="number" id="jun" value="0" min="0">
+</div>
+
+<div>
+<label>July</label>
+<input type="number" id="jul" value="0" min="0">
+</div>
+
+<div>
+<label>August</label>
+<input type="number" id="aug" value="0" min="0">
+</div>
+
+<div>
+<label>September</label>
+<input type="number" id="sep" value="0" min="0">
+</div>
+
+<div>
+<label>October</label>
+<input type="number" id="oct" value="0" min="0">
+</div>
+
+<div>
+<label>November</label>
+<input type="number" id="nov" value="0" min="0">
+</div>
+
+<div>
+<label>December</label>
+<input type="number" id="dec" value="0" min="0">
+</div>
+
+</div>
+
+<br>
+
+<button
+class="btn save-btn"
+onclick="addHousehold()">
+➕ Add Household
+</button>
+
+<button
+class="btn delete-btn"
+onclick="clearHouseholds()">
+🗑️ Delete All Households
+</button>
+
+</div>
+
+
+<!-- ================= ADD DONATION ================= -->
+
+<div class="form-box">
+
+<h2>
+💰 Add Donation
+</h2>
+
+<div class="form-row">
+
+<div>
+<label>Donor Name</label>
+<input
+type="text"
+id="donorName"
+placeholder="Donor name">
+</div>
+
+<div>
+<label>Mobile</label>
+<input
+type="text"
+id="donorMobile"
+placeholder="Mobile">
+</div>
+
+<div>
+<label>Amount</label>
+<input
+type="number"
+id="donorAmount"
+placeholder="Amount">
+</div>
+
+<div>
+<label>Date</label>
+<input
+type="date"
+id="donorDate">
+</div>
+
+<div>
+<label>Reference</label>
+<input
+type="text"
+id="donorReference"
+placeholder="Receipt / UPI reference">
+</div>
+
+</div>
+
+<button
+class="btn save-btn"
+onclick="addDonation()">
+➕ Add Donation
+</button>
+
+<button
+class="btn delete-btn"
+onclick="clearDonations()">
+🗑️ Delete All Donations
+</button>
+
+</div>
+
+
+<!-- ================= FESTIVAL PROGRAM ADMIN ================= -->
+
+<div class="form-box">
+
+<h2>
+📅 Add / Edit Festival Program
+</h2>
+
+<div class="form-row">
+
+<div>
+<label>Program Name</label>
+
+<input
+type="text"
+id="programName"
+placeholder="Example: Ganesh Installation">
+</div>
+
+<div>
+<label>Date</label>
+
+<input
+type="date"
+id="programDate">
+</div>
+
+<div>
+<label>Time</label>
+
+<input
+type="time"
+id="programTime">
+</div>
+
+</div>
+
+<label>Description</label>
+
+<textarea
+id="programDescription"
+placeholder="Enter festival program details"></textarea>
+
+<button
+class="btn save-btn"
+onclick="addProgram()">
+
+➕ Add Program
+
+</button>
+
+<button
+class="btn delete-btn"
+onclick="clearPrograms()">
+
+🗑️ Delete All Programs
+
+</button>
+
+</div>
+
+
+<!-- ================= CONTACT EDIT ================= -->
+
+<div class="form-box">
+
+<h2>
+📞 Edit Contact Information
+</h2>
+
+<label>Address</label>
+
+<textarea id="editAddress"></textarea>
+
+<label>Phone</label>
+
+<input
+type="text"
+id="editPhone">
+
+<label>Email</label>
+
+<input
+type="text"
+id="editEmail">
+
+<button
+class="btn save-btn"
+onclick="saveContact()">
+
+💾 Save Contact
+
+</button>
+
+</div>
+
+
+<!-- ================= DATA BACKUP ================= -->
+
+<div class="form-box">
+
+<h2>
+💾 Data Backup
+</h2>
+
+<p>
+Save a backup of your members, households, donations,
+festival programs and contact information.
+</p>
+
+<br>
+
+<button
+class="btn save-btn"
+onclick="exportData()">
+
+⬇️ Download Backup
+
+</button>
+
+<input
+type="file"
+id="importFile"
+accept=".json"
+onchange="importData(event)">
+
+</div>
+
+
+<!-- ================= RESET ================= -->
+
+<div class="form-box">
+
+<h2>
+⚠️ Website Data
+</h2>
+
+<p>
+Use this button only if you want to remove all saved data.
+</p>
+
+<br>
+
+<button
+class="btn delete-btn"
+onclick="resetAllData()">
+
+🔄 Reset All Data
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+🙏 Ganapati Bappa Morya! 🙏
+</p>
+
+<br>
+
+<p>
+© 2026 Vinayaka Chavithi Committee - Thotatapalli
+</p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   DATA
+===================================================== */
+
+let members =
+JSON.parse(localStorage.getItem("vcMembers")) || [];
+
+let households =
+JSON.parse(localStorage.getItem("vcHouseholds")) || [];
+
+let donations =
+JSON.parse(localStorage.getItem("vcDonations")) || [];
+
+let programs =
+JSON.parse(localStorage.getItem("vcPrograms")) || [
+
+{
+name:"🙏 Ganesh Installation",
+date:"",
+time:"",
+description:"Morning Pooja and Ganesh Pratishta"
+},
+
+{
+name:"🪔 Daily Pooja",
+date:"",
+time:"",
+description:"Daily Ganesh Pooja and Aarti"
+},
+
+{
+name:"🎭 Cultural Program",
+date:"",
+time:"",
+description:"Devotional and cultural activities"
+},
+
+{
+name:"🍚 Annadanam",
+date:"",
+time:"",
+description:"Community food distribution"
+},
+
+{
+name:"🥁 Nimajjanam",
+date:"",
+time:"",
+description:"Ganesh Visarjan procession"
+}
+
+];
+
+localStorage.setItem(
+"vcPrograms",
+JSON.stringify(programs)
+);
+
+
+/* =====================================================
+   MONTHS
+===================================================== */
+
+const months = [
+"jan",
+"feb",
+"mar",
+"apr",
+"may",
+"jun",
+"jul",
+"aug",
+"sep",
+"oct",
+"nov",
+"dec"
+];
+
+const monthLabels = [
+"January",
+"February",
+"March",
+"April",
+"May",
+"June",
+"July",
+"August",
+"September",
+"October",
+"November",
+"December"
+];
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+function escapeHTML(value){
+
+return String(value ?? "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   FORMAT MONEY
+===================================================== */
+
+function money(value){
+
+return "₹" +
+Number(value || 0).toLocaleString("en-IN");
+
+}
+
+
+/* =====================================================
+   COMMITTEE
+===================================================== */
+
+function displayMembers(){
+
+const table =
+document.getElementById("committeeTable");
+
+table.innerHTML="";
+
+members.forEach((m,index)=>{
+
+table.innerHTML += `
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${escapeHTML(m.name)}</td>
+
+<td>${escapeHTML(m.designation)}</td>
+
+<td>${escapeHTML(m.mobile)}</td>
+
+<td class="action-cell">
+
+<button
+class="btn edit-btn"
+onclick="editMember(${index})">
+
+✏️ Edit
+
+</button>
+
+<button
+class="btn delete-btn"
+onclick="deleteMember(${index})">
+
+🗑️ Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+
+function addMember(){
+
+const name =
+document.getElementById("memberName").value.trim();
+
+const designation =
+document.getElementById("memberDesignation").value.trim();
+
+const mobile =
+document.getElementById("memberMobile").value.trim();
+
+if(!name || !designation){
+
+alert(
+"Please enter member name and designation."
+);
+
+return;
+
+}
+
+members.push({
+name:name,
+designation:designation,
+mobile:mobile
+});
+
+saveMembers();
+
+document.getElementById("memberName").value="";
+document.getElementById("memberDesignation").value="";
+document.getElementById("memberMobile").value="";
+
+alert("Committee member added successfully.");
+
+}
+
+
+function editMember(index){
+
+const m=members[index];
+
+const newName =
+prompt("Member Name:",m.name);
+
+if(newName===null) return;
+
+const newDesignation =
+prompt("Designation:",m.designation);
+
+if(newDesignation===null) return;
+
+const newMobile =
+prompt("Mobile Number:",m.mobile);
+
+if(newMobile===null) return;
+
+if(!newName.trim() || !newDesignation.trim()){
+
+alert("Name and designation are required.");
+
+return;
+
+}
+
+members[index]={
+name:newName.trim(),
+designation:newDesignation.trim(),
+mobile:newMobile.trim()
+};
+
+saveMembers();
+
+}
+
+
+function deleteMember(index){
+
+if(!confirm(
+"Are you sure you want to delete this committee member?"
+)) return;
+
+members.splice(index,1);
+
+saveMembers();
+
+}
+
+
+function saveMembers(){
+
+localStorage.setItem(
+"vcMembers",
+JSON.stringify(members)
+);
+
+displayMembers();
+
+}
+
+
+function clearMembers(){
+
+if(!confirm(
+"Delete ALL committee members?"
+)) return;
+
+members=[];
+
+saveMembers();
+
+}
+
+
+/* =====================================================
+   HOUSEHOLDS
+===================================================== */
+
+function getHouseMonths(h){
+
+return months.map(
+month => Number(h[month] || 0)
+);
+
+}
+
+
+function householdTotal(h){
+
+return getHouseMonths(h)
+.reduce(
+(sum,value)=>sum+value,
+0
+);
+
+}
+
+
+function displayHouseholds(){
+
+const table =
+document.getElementById("householdTable");
+
+table.innerHTML="";
+
+let grandTotal=0;
+
+let monthlyTotals =
+Array(12).fill(0);
+
+households.forEach((h,index)=>{
+
+const values =
+getHouseMonths(h);
+
+const total =
+values.reduce(
+(sum,value)=>sum+value,
+0
+);
+
+grandTotal += total;
+
+values.forEach((value,i)=>{
+monthlyTotals[i]+=value;
+});
+
+let row=`
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${escapeHTML(h.houseNo)}</td>
+
+<td>${escapeHTML(h.familyName)}</td>
+
+<td>${escapeHTML(h.mobile)}</td>
+`;
+
+values.forEach(value=>{
+
+row += `
+<td>${money(value)}</td>
+`;
+
+});
+
+row += `
+
+<td class="total-column">
+${money(total)}
+</td>
+
+<td class="action-cell">
+
+<button
+class="btn edit-btn"
+onclick="editHousehold(${index})">
+
+✏️ Edit
+
+</button>
+
+<button
+class="btn delete-btn"
+onclick="deleteHousehold(${index})">
+
+🗑️ Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+table.innerHTML += row;
+
+});
+
+
+document.getElementById("houseCount")
+.innerText=households.length;
+
+document.getElementById("houseContribution")
+.innerText=money(grandTotal);
+
+
+/* Monthly totals */
+
+months.forEach((month,index)=>{
+
+const element =
+document.getElementById(
+"total" +
+month.charAt(0).toUpperCase() +
+month.slice(1)
+);
+
+if(element){
+element.innerText=
+money(monthlyTotals[index]);
+}
+
+});
+
+}
+
+
+function readMonthlyValues(){
+
+let result={};
+
+months.forEach(month=>{
+
+result[month] =
+Number(
+document.getElementById(month).value
+) || 0;
+
+});
+
+return result;
+
+}
+
+
+function addHousehold(){
+
+const houseNo =
+document.getElementById("houseNo").value.trim();
+
+const familyName =
+document.getElementById("familyName").value.trim();
+
+const mobile =
+document.getElementById("familyMobile").value.trim();
+
+if(!houseNo || !familyName){
+
+alert(
+"Please enter house number and family name."
+);
+
+return;
+
+}
+
+const monthly =
+readMonthlyValues();
+
+households.push({
+
+houseNo:houseNo,
+familyName:familyName,
+mobile:mobile,
+
+...monthly
+
+});
+
+saveHouseholds();
+
+document.getElementById("houseNo").value="";
+document.getElementById("familyName").value="";
+document.getElementById("familyMobile").value="";
+
+months.forEach(month=>{
+document.getElementById(month).value=0;
+});
+
+alert(
+"Household added successfully."
+);
+
+}
+
+
+function editHousehold(index){
+
+const h=households[index];
+
+const houseNo =
+prompt(
+"House Number:",
+h.houseNo
+);
+
+if(houseNo===null) return;
+
+const familyName =
+prompt(
+"Family / Household Name:",
+h.familyName
+);
+
+if(familyName===null) return;
+
+const mobile =
+prompt(
+"Mobile Number:",
+h.mobile
+);
+
+if(mobile===null) return;
+
+
+/* Edit each month */
+
+let updated={
+
+houseNo:houseNo.trim(),
+familyName:familyName.trim(),
+mobile:mobile.trim()
+};
+
+for(let i=0;i<months.length;i++){
+
+const month=months[i];
+
+const value =
+prompt(
+monthLabels[i]+" Amount:",
+h[month] || 0
+);
+
+if(value===null) return;
+
+updated[month]=
+Number(value) || 0;
+
+}
+
+if(!updated.houseNo ||
+!updated.familyName){
+
+alert(
+"House number and family name are required."
+);
+
+return;
+
+}
+
+households[index]=updated;
+
+saveHouseholds();
+
+}
+
+
+function deleteHousehold(index){
+
+if(!confirm(
+"Are you sure you want to delete this household?"
+)) return;
+
+households.splice(index,1);
+
+saveHouseholds();
+
+}
+
+
+function saveHouseholds(){
+
+localStorage.setItem(
+"vcHouseholds",
+JSON.stringify(households)
+);
+
+displayHouseholds();
+
+}
+
+
+function clearHouseholds(){
+
+if(!confirm(
+"Delete ALL household records?"
+)) return;
+
+households=[];
+
+saveHouseholds();
+
+}
+
+
+/* =====================================================
+   DONATIONS
+===================================================== */
+
+function displayDonations(){
+
+const table =
+document.getElementById("donationTable");
+
+table.innerHTML="";
+
+let total=0;
+
+donations.forEach((d,index)=>{
+
+total += Number(d.amount)||0;
+
+table.innerHTML += `
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${escapeHTML(d.name)}</td>
+
+<td>${escapeHTML(d.mobile)}</td>
+
+<td>${money(d.amount)}</td>
+
+<td>${escapeHTML(d.date)}</td>
+
+<td>${escapeHTML(d.reference)}</td>
+
+<td class="action-cell">
+
+<button
+class="btn edit-btn"
+onclick="editDonation(${index})">
+
+✏️ Edit
+
+</button>
+
+<button
+class="btn delete-btn"
+onclick="deleteDonation(${index})">
+
+🗑️ Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("donorCount")
+.innerText=donations.length;
+
+document.getElementById("totalDonation")
+.innerText=money(total);
+
+}
+
+
+function addDonation(){
+
+const name =
+document.getElementById("donorName").value.trim();
+
+const mobile =
+document.getElementById("donorMobile").value.trim();
+
+const amount =
+document.getElementById("donorAmount").value;
+
+const date =
+document.getElementById("donorDate").value;
+
+const reference =
+document.getElementById("donorReference").value.trim();
+
+if(!name || !amount){
+
+alert(
+"Please enter donor name and amount."
+);
+
+return;
+
+}
+
+donations.push({
+
+name:name,
+mobile:mobile,
+amount:Number(amount),
+date:date,
+reference:reference
+
+});
+
+saveDonations();
+
+document.getElementById("donorName").value="";
+document.getElementById("donorMobile").value="";
+document.getElementById("donorAmount").value="";
+document.getElementById("donorDate").value="";
+document.getElementById("donorReference").value="";
+
+alert("Donation added successfully.");
+
+}
+
+
+function editDonation(index){
+
+const d=donations[index];
+
+const name =
+prompt("Donor Name:",d.name);
+
+if(name===null)return;
+
+const mobile =
+prompt("Mobile:",d.mobile);
+
+if(mobile===null)return;
+
+const amount =
+prompt("Amount:",d.amount);
+
+if(amount===null)return;
+
+const date =
+prompt("Date:",d.date);
+
+if(date===null)return;
+
+const reference =
+prompt("Reference:",d.reference);
+
+if(reference===null)return;
+
+if(!name.trim() || !amount){
+
+alert(
+"Donor name and amount are required."
+);
+
+return;
+
+}
+
+donations[index]={
+
+name:name.trim(),
+mobile:mobile.trim(),
+amount:Number(amount)||0,
+date:date,
+reference:reference.trim()
+
+};
+
+saveDonations();
+
+}
+
+
+function deleteDonation(index){
+
+if(!confirm(
+"Are you sure you want to delete this donation?"
+))return;
+
+donations.splice(index,1);
+
+saveDonations();
+
+}
+
+
+function saveDonations(){
+
+localStorage.setItem(
+"vcDonations",
+JSON.stringify(donations)
+);
+
+displayDonations();
+
+}
+
+
+function clearDonations(){
+
+if(!confirm(
+"Delete ALL donation records?"
+))return;
+
+donations=[];
+
+saveDonations();
+
+}
+
+
+/* =====================================================
+   FESTIVAL PROGRAM
+===================================================== */
+
+function displayPrograms(){
+
+const container =
+document.getElementById(
+"programContainer"
+);
+
+container.innerHTML="";
+
+programs.forEach((p,index)=>{
+
+let dateText =
+p.date
+? new Date(p.date+"T00:00:00")
+.toLocaleDateString("en-IN")
+: "";
+
+let timeText =
+p.time || "";
+
+container.innerHTML += `
+
+<div class="card program-card">
+
+<h3>
+${escapeHTML(p.name)}
+</h3>
+
+${dateText ? `
+<p class="program-date">
+📅 ${escapeHTML(dateText)}
+</p>
+` : ""}
+
+${timeText ? `
+<p class="program-time">
+⏰ ${escapeHTML(timeText)}
+</p>
+` : ""}
+
+<p class="program-description">
+${escapeHTML(p.description)}
+</p>
+
+<div class="program-actions">
+
+<button
+class="btn edit-btn"
+onclick="editProgram(${index})">
+
+✏️ Edit
+
+</button>
+
+<button
+class="btn delete-btn"
+onclick="deleteProgram(${index})">
+
+🗑️ Delete
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+function addProgram(){
+
+const name =
+document.getElementById(
+"programName"
+).value.trim();
+
+const date =
+document.getElementById(
+"programDate"
+).value;
+
+const time =
+document.getElementById(
+"programTime"
+).value;
+
+const description =
+document.getElementById(
+"programDescription"
+).value.trim();
+
+if(!name){
+
+alert(
+"Please enter the program name."
+);
+
+return;
+
+}
+
+programs.push({
+
+name:name,
+date:date,
+time:time,
+description:
+description || "Festival program"
+
+});
+
+savePrograms();
+
+document.getElementById(
+"programName"
+).value="";
+
+document.getElementById(
+"programDate"
+).value="";
+
+document.getElementById(
+"programTime"
+).value="";
+
+document.getElementById(
+"programDescription"
+).value="";
+
+alert(
+"Festival program added successfully."
+);
+
+}
+
+
+function editProgram(index){
+
+const p=programs[index];
+
+const name =
+prompt(
+"Program Name:",
+p.name
+);
+
+if(name===null)return;
+
+const date =
+prompt(
+"Date (YYYY-MM-DD):",
+p.date
+);
+
+if(date===null)return;
+
+const time =
+prompt(
+"Time:",
+p.time
+);
+
+if(time===null)return;
+
+const description =
+prompt(
+"Description:",
+p.description
+);
+
+if(description===null)return;
+
+if(!name.trim()){
+
+alert(
+"Program name is required."
+);
+
+return;
+
+}
+
+programs[index]={
+
+name:name.trim(),
+date:date.trim(),
+time:time.trim(),
+description:description.trim()
+
+};
+
+savePrograms();
+
+}
+
+
+function deleteProgram(index){
+
+if(!confirm(
+"Are you sure you want to delete this festival program?"
+))return;
+
+programs.splice(index,1);
+
+savePrograms();
+
+}
+
+
+function clearPrograms(){
+
+if(!confirm(
+"Delete ALL festival programs?"
+))return;
+
+programs=[];
+
+savePrograms();
+
+}
+
+
+function savePrograms(){
+
+localStorage.setItem(
+"vcPrograms",
+JSON.stringify(programs)
+);
+
+displayPrograms();
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+function saveContact(){
+
+const address =
+document.getElementById(
+"editAddress"
+).value.trim();
+
+const phone =
+document.getElementById(
+"editPhone"
+).value.trim();
+
+const email =
+document.getElementById(
+"editEmail"
+).value.trim();
+
+localStorage.setItem(
+"vcAddress",
+address
+);
+
+localStorage.setItem(
+"vcPhone",
+phone
+);
+
+localStorage.setItem(
+"vcEmail",
+email
+);
+
+loadContact();
+
+alert(
+"Contact information saved successfully."
+);
+
+}
+
+
+function loadContact(){
+
+const address =
+localStorage.getItem("vcAddress") ||
+"Thotatapalli, Andhra Pradesh";
+
+const phone =
+localStorage.getItem("vcPhone") ||
+"+91 XXXXXXXXXX";
+
+const email =
+localStorage.getItem("vcEmail") ||
+"vinayakachavithicommittee@gmail.com";
+
+document.getElementById(
+"addressText"
+).innerText=address;
+
+document.getElementById(
+"phoneText"
+).innerText=phone;
+
+document.getElementById(
+"emailText"
+).innerText=email;
+
+document.getElementById(
+"editAddress"
+).value=address;
+
+document.getElementById(
+"editPhone"
+).value=phone;
+
+document.getElementById(
+"editEmail"
+).value=email;
+
+}
+
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+function changeImage(event,imageId){
+
+const file =
+event.target.files[0];
+
+if(!file)return;
+
+const reader =
+new FileReader();
+
+reader.onload=function(e){
+
+const imageData =
+e.target.result;
+
+document.getElementById(
+imageId
+).src=imageData;
+
+localStorage.setItem(
+"vc_"+imageId,
+imageData
+);
+
+document.getElementById(
+"imageStatus"
+).innerText=
+"✅ Photo updated successfully.";
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+
+function loadImages(){
+
+[
+"photo1",
+"photo2",
+"photo3",
+"photo4"
+].forEach(id=>{
+
+const saved =
+localStorage.getItem(
+"vc_"+id
+);
+
+if(saved){
+
+document.getElementById(
+id
+).src=saved;
+
+}
+
+});
+
+}
+
+
+function deleteImage(imageId){
+
+if(!confirm(
+"Delete this photo?"
+))return;
+
+localStorage.removeItem(
+"vc_"+imageId
+);
+
+const defaultImages={
+
+photo1:"ganesh.jpg",
+photo2:"festival.jpg",
+photo3:"committee.jpg",
+photo4:"pooja.jpg"
+
+};
+
+document.getElementById(
+imageId
+).src=defaultImages[imageId];
+
+document.getElementById(
+"imageStatus"
+).innerText=
+"🗑️ Saved photo removed. Default image restored.";
+
+}
+
+
+/* =====================================================
+   EXPORT BACKUP
+===================================================== */
+
+function exportData(){
+
+const backup={
+
+members:members,
+
+households:households,
+
+donations:donations,
+
+programs:programs,
+
+address:
+localStorage.getItem("vcAddress") || "",
+
+phone:
+localStorage.getItem("vcPhone") || "",
+
+email:
+localStorage.getItem("vcEmail") || ""
+
+};
+
+const data=
+JSON.stringify(
+backup,
+null,
+2
+);
+
+const blob=
+new Blob(
+[data],
+{
+type:"application/json"
+}
+);
+
+const url=
+URL.createObjectURL(blob);
+
+const link=
+document.createElement("a");
+
+link.href=url;
+
+link.download=
+"Vinayaka-Chavithi-Committee-Backup.json";
+
+link.click();
+
+URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   IMPORT BACKUP
+===================================================== */
+
+function importData(event){
+
+const file=
+event.target.files[0];
+
+if(!file)return;
+
+const reader=
+new FileReader();
+
+reader.onload=function(e){
+
+try{
+
+const backup=
+JSON.parse(e.target.result);
+
+if(backup.members)
+members=backup.members;
+
+if(backup.households)
+households=backup.households;
+
+if(backup.donations)
+donations=backup.donations;
+
+if(backup.programs)
+programs=backup.programs;
+
+localStorage.setItem(
+"vcMembers",
+JSON.stringify(members)
+);
+
+localStorage.setItem(
+"vcHouseholds",
+JSON.stringify(households)
+);
+
+localStorage.setItem(
+"vcDonations",
+JSON.stringify(donations)
+);
+
+localStorage.setItem(
+"vcPrograms",
+JSON.stringify(programs)
+);
+
+if(backup.address!==undefined)
+localStorage.setItem(
+"vcAddress",
+backup.address
+);
+
+if(backup.phone!==undefined)
+localStorage.setItem(
+"vcPhone",
+backup.phone
+);
+
+if(backup.email!==undefined)
+localStorage.setItem(
+"vcEmail",
+backup.email
+);
+
+displayMembers();
+displayHouseholds();
+displayDonations();
+displayPrograms();
+loadContact();
+
+alert(
+"✅ Backup restored successfully."
+);
+
+}
+
+catch(error){
+
+alert(
+"❌ Invalid backup file."
+);
+
+}
+
+};
+
+reader.readAsText(file);
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+function resetAllData(){
+
+if(!confirm(
+
+"WARNING!\n\n"+
+"This will delete ALL members, households, "+
+"monthly amounts, donations, festival programs, "+
+"contacts and saved photos.\n\n"+
+"Continue?"
+
+))return;
+
+localStorage.clear();
+
+location.reload();
+
+}
+
+
+/* =====================================================
+   START APP
+===================================================== */
+
+displayMembers();
+
+displayHouseholds();
+
+displayDonations();
+
+displayPrograms();
+
+loadContact();
+
+loadImages();
+
+</script>
+
+</body>
+</html>
+```
