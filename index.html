@@ -193,17 +193,23 @@ tr:nth-child(even){
     min-width:180px;
 }
 
-/* ================= MONTHLY TABLE ================= */
+/* ================= COMMITTEE MONTHLY TABLE ================= */
 
-.monthly-table th{
-    min-width:100px;
+.committee-monthly-table th{
+    min-width:105px;
 }
 
-.monthly-table .total-column{
+.committee-monthly-table .total-column{
     background:#fff0b3;
     font-weight:bold;
     color:#7b1e00;
 }
+
+.committee-monthly-table .action-cell{
+    min-width:190px;
+}
+
+/* ================= MONTH SUMMARY ================= */
 
 .month-summary{
     margin:20px 0;
@@ -400,6 +406,7 @@ footer{
     section{
         padding:35px 3%;
     }
+
 }
 
 </style>
@@ -420,7 +427,6 @@ footer{
 
 <a href="#home">Home</a>
 <a href="#committee">Committee</a>
-<a href="#households">Households</a>
 <a href="#donations">Donations</a>
 <a href="#program">Program</a>
 <a href="#gallery">Gallery</a>
@@ -472,8 +478,8 @@ View Festival Program
 <p>
 We warmly welcome everyone to our Vinayaka Chavithi celebrations.
 This website/app is created for managing committee members,
-village households, monthly contributions, donations, festival
-programs and celebration photos.
+monthly contributions, donations, festival programs and
+celebration photos.
 </p>
 
 <br>
@@ -494,51 +500,21 @@ programs and celebration photos.
 <section id="committee">
 
 <h2 class="section-title">
-👥 Committee Members
+👥 Committee Members & Monthly Contributions
 </h2>
 
-<div class="table-container">
 
-<table>
-
-<thead>
-
-<tr>
-<th>S.No</th>
-<th>Name</th>
-<th>Designation</th>
-<th>Mobile Number</th>
-<th>Actions</th>
-</tr>
-
-</thead>
-
-<tbody id="committeeTable"></tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<!-- ================= HOUSEHOLDS ================= -->
-
-<section id="households">
-
-<h2 class="section-title">
-🏠 Village Household Monthly Contributions
-</h2>
+<!-- COMMITTEE SUMMARY -->
 
 <div class="summary">
 
 <div class="summary-box">
-<h2 id="houseCount">0</h2>
-<p>Total Households</p>
+<h2 id="memberCount">0</h2>
+<p>Total Committee Members</p>
 </div>
 
 <div class="summary-box">
-<h2 id="houseContribution">₹0</h2>
+<h2 id="memberContribution">₹0</h2>
 <p>Total Annual Contribution</p>
 </div>
 
@@ -612,18 +588,20 @@ programs and celebration photos.
 </div>
 
 
+<!-- COMMITTEE MONTHLY TABLE -->
+
 <div class="table-container">
 
-<table class="monthly-table">
+<table class="committee-monthly-table">
 
 <thead>
 
 <tr>
 
 <th>S.No</th>
-<th>House No.</th>
-<th>Family / Household Name</th>
-<th>Mobile</th>
+<th>Name</th>
+<th>Designation</th>
+<th>Mobile Number</th>
 
 <th>January</th>
 <th>February</th>
@@ -645,7 +623,7 @@ programs and celebration photos.
 
 </thead>
 
-<tbody id="householdTable"></tbody>
+<tbody id="committeeTable"></tbody>
 
 </table>
 
@@ -914,7 +892,7 @@ vinayakachavithicommittee@gmail.com
 </h2>
 
 
-<!-- ================= ADD MEMBER ================= -->
+<!-- ================= ADD COMMITTEE MEMBER ================= -->
 
 <div class="form-box">
 
@@ -926,92 +904,45 @@ vinayakachavithicommittee@gmail.com
 
 <div>
 <label>Name</label>
+
 <input
 type="text"
 id="memberName"
 placeholder="Member name">
+
 </div>
 
+
 <div>
+
 <label>Designation</label>
+
 <input
 type="text"
 id="memberDesignation"
 placeholder="President / Secretary">
+
 </div>
 
+
 <div>
+
 <label>Mobile</label>
+
 <input
 type="text"
 id="memberMobile"
 placeholder="Mobile number">
-</div>
 
-</div>
-
-<button
-class="btn save-btn"
-onclick="addMember()">
-➕ Add Member
-</button>
-
-<button
-class="btn delete-btn"
-onclick="clearMembers()">
-🗑️ Delete All Members
-</button>
-
-</div>
-
-
-<!-- ================= ADD HOUSEHOLD ================= -->
-
-<div class="form-box">
-
-<h2>
-🏠 Add Village Household
-</h2>
-
-<p>
-Enter the monthly amount for each month.
-Leave a month as 0 if there is no contribution.
-</p>
-
-<br>
-
-<div class="form-row">
-
-<div>
-<label>House Number</label>
-<input
-type="text"
-id="houseNo"
-placeholder="House No.">
-</div>
-
-<div>
-<label>Family Name</label>
-<input
-type="text"
-id="familyName"
-placeholder="Family name">
-</div>
-
-<div>
-<label>Mobile</label>
-<input
-type="text"
-id="familyMobile"
-placeholder="Mobile number">
 </div>
 
 </div>
 
 
 <h3 style="margin:15px 0;color:#7b1e00;">
-💰 Monthly Amounts
+💰 Monthly Contributions
 </h3>
+
 
 <div class="form-row">
 
@@ -1077,18 +1008,23 @@ placeholder="Mobile number">
 
 </div>
 
+
 <br>
 
 <button
 class="btn save-btn"
-onclick="addHousehold()">
-➕ Add Household
+onclick="addMember()">
+
+➕ Add Member
+
 </button>
 
 <button
 class="btn delete-btn"
-onclick="clearHouseholds()">
-🗑️ Delete All Households
+onclick="clearMembers()">
+
+🗑️ Delete All Members
+
 </button>
 
 </div>
@@ -1105,42 +1041,57 @@ onclick="clearHouseholds()">
 <div class="form-row">
 
 <div>
+
 <label>Donor Name</label>
+
 <input
 type="text"
 id="donorName"
 placeholder="Donor name">
+
 </div>
 
 <div>
+
 <label>Mobile</label>
+
 <input
 type="text"
 id="donorMobile"
 placeholder="Mobile">
+
 </div>
 
 <div>
+
 <label>Amount</label>
+
 <input
 type="number"
 id="donorAmount"
 placeholder="Amount">
+
 </div>
 
 <div>
+
 <label>Date</label>
+
 <input
 type="date"
 id="donorDate">
+
 </div>
 
 <div>
+
 <label>Reference</label>
+
 <input
 type="text"
 id="donorReference"
 placeholder="Receipt / UPI reference">
+
 </div>
 
 </div>
@@ -1148,13 +1099,17 @@ placeholder="Receipt / UPI reference">
 <button
 class="btn save-btn"
 onclick="addDonation()">
+
 ➕ Add Donation
+
 </button>
 
 <button
 class="btn delete-btn"
 onclick="clearDonations()">
+
 🗑️ Delete All Donations
+
 </button>
 
 </div>
@@ -1171,28 +1126,34 @@ onclick="clearDonations()">
 <div class="form-row">
 
 <div>
+
 <label>Program Name</label>
 
 <input
 type="text"
 id="programName"
 placeholder="Example: Ganesh Installation">
+
 </div>
 
 <div>
+
 <label>Date</label>
 
 <input
 type="date"
 id="programDate">
+
 </div>
 
 <div>
+
 <label>Time</label>
 
 <input
 type="time"
 id="programTime">
+
 </div>
 
 </div>
@@ -1266,8 +1227,9 @@ onclick="saveContact()">
 </h2>
 
 <p>
-Save a backup of your members, households, donations,
-festival programs and contact information.
+Save a backup of your committee members,
+monthly contributions, donations, festival
+programs and contact information.
 </p>
 
 <br>
@@ -1341,9 +1303,6 @@ onclick="resetAllData()">
 
 let members =
 JSON.parse(localStorage.getItem("vcMembers")) || [];
-
-let households =
-JSON.parse(localStorage.getItem("vcHouseholds")) || [];
 
 let donations =
 JSON.parse(localStorage.getItem("vcDonations")) || [];
@@ -1458,1325 +1417,15 @@ Number(value || 0).toLocaleString("en-IN");
 
 
 /* =====================================================
-   COMMITTEE
+   GET MEMBER MONTHS
 ===================================================== */
 
-function displayMembers(){
-
-const table =
-document.getElementById("committeeTable");
-
-table.innerHTML="";
-
-members.forEach((m,index)=>{
-
-table.innerHTML += `
-
-<tr>
-
-<td>${index+1}</td>
-
-<td>${escapeHTML(m.name)}</td>
-
-<td>${escapeHTML(m.designation)}</td>
-
-<td>${escapeHTML(m.mobile)}</td>
-
-<td class="action-cell">
-
-<button
-class="btn edit-btn"
-onclick="editMember(${index})">
-
-✏️ Edit
-
-</button>
-
-<button
-class="btn delete-btn"
-onclick="deleteMember(${index})">
-
-🗑️ Delete
-
-</button>
-
-</td>
-
-</tr>
-
-`;
-
-});
-
-}
-
-
-function addMember(){
-
-const name =
-document.getElementById("memberName").value.trim();
-
-const designation =
-document.getElementById("memberDesignation").value.trim();
-
-const mobile =
-document.getElementById("memberMobile").value.trim();
-
-if(!name || !designation){
-
-alert(
-"Please enter member name and designation."
-);
-
-return;
-
-}
-
-members.push({
-name:name,
-designation:designation,
-mobile:mobile
-});
-
-saveMembers();
-
-document.getElementById("memberName").value="";
-document.getElementById("memberDesignation").value="";
-document.getElementById("memberMobile").value="";
-
-alert("Committee member added successfully.");
-
-}
-
-
-function editMember(index){
-
-const m=members[index];
-
-const newName =
-prompt("Member Name:",m.name);
-
-if(newName===null) return;
-
-const newDesignation =
-prompt("Designation:",m.designation);
-
-if(newDesignation===null) return;
-
-const newMobile =
-prompt("Mobile Number:",m.mobile);
-
-if(newMobile===null) return;
-
-if(!newName.trim() || !newDesignation.trim()){
-
-alert("Name and designation are required.");
-
-return;
-
-}
-
-members[index]={
-name:newName.trim(),
-designation:newDesignation.trim(),
-mobile:newMobile.trim()
-};
-
-saveMembers();
-
-}
-
-
-function deleteMember(index){
-
-if(!confirm(
-"Are you sure you want to delete this committee member?"
-)) return;
-
-members.splice(index,1);
-
-saveMembers();
-
-}
-
-
-function saveMembers(){
-
-localStorage.setItem(
-"vcMembers",
-JSON.stringify(members)
-);
-
-displayMembers();
-
-}
-
-
-function clearMembers(){
-
-if(!confirm(
-"Delete ALL committee members?"
-)) return;
-
-members=[];
-
-saveMembers();
-
-}
-
-
-/* =====================================================
-   HOUSEHOLDS
-===================================================== */
-
-function getHouseMonths(h){
+function getMemberMonths(member){
 
 return months.map(
-month => Number(h[month] || 0)
+month => Number(member[month] || 0)
 );
 
 }
 
-
-function householdTotal(h){
-
-return getHouseMonths(h)
-.reduce(
-(sum,value)=>sum+value,
-0
-);
-
-}
-
-
-function displayHouseholds(){
-
-const table =
-document.getElementById("householdTable");
-
-table.innerHTML="";
-
-let grandTotal=0;
-
-let monthlyTotals =
-Array(12).fill(0);
-
-households.forEach((h,index)=>{
-
-const values =
-getHouseMonths(h);
-
-const total =
-values.reduce(
-(sum,value)=>sum+value,
-0
-);
-
-grandTotal += total;
-
-values.forEach((value,i)=>{
-monthlyTotals[i]+=value;
-});
-
-let row=`
-
-<tr>
-
-<td>${index+1}</td>
-
-<td>${escapeHTML(h.houseNo)}</td>
-
-<td>${escapeHTML(h.familyName)}</td>
-
-<td>${escapeHTML(h.mobile)}</td>
-`;
-
-values.forEach(value=>{
-
-row += `
-<td>${money(value)}</td>
-`;
-
-});
-
-row += `
-
-<td class="total-column">
-${money(total)}
-</td>
-
-<td class="action-cell">
-
-<button
-class="btn edit-btn"
-onclick="editHousehold(${index})">
-
-✏️ Edit
-
-</button>
-
-<button
-class="btn delete-btn"
-onclick="deleteHousehold(${index})">
-
-🗑️ Delete
-
-</button>
-
-</td>
-
-</tr>
-
-`;
-
-table.innerHTML += row;
-
-});
-
-
-document.getElementById("houseCount")
-.innerText=households.length;
-
-document.getElementById("houseContribution")
-.innerText=money(grandTotal);
-
-
-/* Monthly totals */
-
-months.forEach((month,index)=>{
-
-const element =
-document.getElementById(
-"total" +
-month.charAt(0).toUpperCase() +
-month.slice(1)
-);
-
-if(element){
-element.innerText=
-money(monthlyTotals[index]);
-}
-
-});
-
-}
-
-
-function readMonthlyValues(){
-
-let result={};
-
-months.forEach(month=>{
-
-result[month] =
-Number(
-document.getElementById(month).value
-) || 0;
-
-});
-
-return result;
-
-}
-
-
-function addHousehold(){
-
-const houseNo =
-document.getElementById("houseNo").value.trim();
-
-const familyName =
-document.getElementById("familyName").value.trim();
-
-const mobile =
-document.getElementById("familyMobile").value.trim();
-
-if(!houseNo || !familyName){
-
-alert(
-"Please enter house number and family name."
-);
-
-return;
-
-}
-
-const monthly =
-readMonthlyValues();
-
-households.push({
-
-houseNo:houseNo,
-familyName:familyName,
-mobile:mobile,
-
-...monthly
-
-});
-
-saveHouseholds();
-
-document.getElementById("houseNo").value="";
-document.getElementById("familyName").value="";
-document.getElementById("familyMobile").value="";
-
-months.forEach(month=>{
-document.getElementById(month).value=0;
-});
-
-alert(
-"Household added successfully."
-);
-
-}
-
-
-function editHousehold(index){
-
-const h=households[index];
-
-const houseNo =
-prompt(
-"House Number:",
-h.houseNo
-);
-
-if(houseNo===null) return;
-
-const familyName =
-prompt(
-"Family / Household Name:",
-h.familyName
-);
-
-if(familyName===null) return;
-
-const mobile =
-prompt(
-"Mobile Number:",
-h.mobile
-);
-
-if(mobile===null) return;
-
-
-/* Edit each month */
-
-let updated={
-
-houseNo:houseNo.trim(),
-familyName:familyName.trim(),
-mobile:mobile.trim()
-};
-
-for(let i=0;i<months.length;i++){
-
-const month=months[i];
-
-const value =
-prompt(
-monthLabels[i]+" Amount:",
-h[month] || 0
-);
-
-if(value===null) return;
-
-updated[month]=
-Number(value) || 0;
-
-}
-
-if(!updated.houseNo ||
-!updated.familyName){
-
-alert(
-"House number and family name are required."
-);
-
-return;
-
-}
-
-households[index]=updated;
-
-saveHouseholds();
-
-}
-
-
-function deleteHousehold(index){
-
-if(!confirm(
-"Are you sure you want to delete this household?"
-)) return;
-
-households.splice(index,1);
-
-saveHouseholds();
-
-}
-
-
-function saveHouseholds(){
-
-localStorage.setItem(
-"vcHouseholds",
-JSON.stringify(households)
-);
-
-displayHouseholds();
-
-}
-
-
-function clearHouseholds(){
-
-if(!confirm(
-"Delete ALL household records?"
-)) return;
-
-households=[];
-
-saveHouseholds();
-
-}
-
-
-/* =====================================================
-   DONATIONS
-===================================================== */
-
-function displayDonations(){
-
-const table =
-document.getElementById("donationTable");
-
-table.innerHTML="";
-
-let total=0;
-
-donations.forEach((d,index)=>{
-
-total += Number(d.amount)||0;
-
-table.innerHTML += `
-
-<tr>
-
-<td>${index+1}</td>
-
-<td>${escapeHTML(d.name)}</td>
-
-<td>${escapeHTML(d.mobile)}</td>
-
-<td>${money(d.amount)}</td>
-
-<td>${escapeHTML(d.date)}</td>
-
-<td>${escapeHTML(d.reference)}</td>
-
-<td class="action-cell">
-
-<button
-class="btn edit-btn"
-onclick="editDonation(${index})">
-
-✏️ Edit
-
-</button>
-
-<button
-class="btn delete-btn"
-onclick="deleteDonation(${index})">
-
-🗑️ Delete
-
-</button>
-
-</td>
-
-</tr>
-
-`;
-
-});
-
-document.getElementById("donorCount")
-.innerText=donations.length;
-
-document.getElementById("totalDonation")
-.innerText=money(total);
-
-}
-
-
-function addDonation(){
-
-const name =
-document.getElementById("donorName").value.trim();
-
-const mobile =
-document.getElementById("donorMobile").value.trim();
-
-const amount =
-document.getElementById("donorAmount").value;
-
-const date =
-document.getElementById("donorDate").value;
-
-const reference =
-document.getElementById("donorReference").value.trim();
-
-if(!name || !amount){
-
-alert(
-"Please enter donor name and amount."
-);
-
-return;
-
-}
-
-donations.push({
-
-name:name,
-mobile:mobile,
-amount:Number(amount),
-date:date,
-reference:reference
-
-});
-
-saveDonations();
-
-document.getElementById("donorName").value="";
-document.getElementById("donorMobile").value="";
-document.getElementById("donorAmount").value="";
-document.getElementById("donorDate").value="";
-document.getElementById("donorReference").value="";
-
-alert("Donation added successfully.");
-
-}
-
-
-function editDonation(index){
-
-const d=donations[index];
-
-const name =
-prompt("Donor Name:",d.name);
-
-if(name===null)return;
-
-const mobile =
-prompt("Mobile:",d.mobile);
-
-if(mobile===null)return;
-
-const amount =
-prompt("Amount:",d.amount);
-
-if(amount===null)return;
-
-const date =
-prompt("Date:",d.date);
-
-if(date===null)return;
-
-const reference =
-prompt("Reference:",d.reference);
-
-if(reference===null)return;
-
-if(!name.trim() || !amount){
-
-alert(
-"Donor name and amount are required."
-);
-
-return;
-
-}
-
-donations[index]={
-
-name:name.trim(),
-mobile:mobile.trim(),
-amount:Number(amount)||0,
-date:date,
-reference:reference.trim()
-
-};
-
-saveDonations();
-
-}
-
-
-function deleteDonation(index){
-
-if(!confirm(
-"Are you sure you want to delete this donation?"
-))return;
-
-donations.splice(index,1);
-
-saveDonations();
-
-}
-
-
-function saveDonations(){
-
-localStorage.setItem(
-"vcDonations",
-JSON.stringify(donations)
-);
-
-displayDonations();
-
-}
-
-
-function clearDonations(){
-
-if(!confirm(
-"Delete ALL donation records?"
-))return;
-
-donations=[];
-
-saveDonations();
-
-}
-
-
-/* =====================================================
-   FESTIVAL PROGRAM
-===================================================== */
-
-function displayPrograms(){
-
-const container =
-document.getElementById(
-"programContainer"
-);
-
-container.innerHTML="";
-
-programs.forEach((p,index)=>{
-
-let dateText =
-p.date
-? new Date(p.date+"T00:00:00")
-.toLocaleDateString("en-IN")
-: "";
-
-let timeText =
-p.time || "";
-
-container.innerHTML += `
-
-<div class="card program-card">
-
-<h3>
-${escapeHTML(p.name)}
-</h3>
-
-${dateText ? `
-<p class="program-date">
-📅 ${escapeHTML(dateText)}
-</p>
-` : ""}
-
-${timeText ? `
-<p class="program-time">
-⏰ ${escapeHTML(timeText)}
-</p>
-` : ""}
-
-<p class="program-description">
-${escapeHTML(p.description)}
-</p>
-
-<div class="program-actions">
-
-<button
-class="btn edit-btn"
-onclick="editProgram(${index})">
-
-✏️ Edit
-
-</button>
-
-<button
-class="btn delete-btn"
-onclick="deleteProgram(${index})">
-
-🗑️ Delete
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-}
-
-
-function addProgram(){
-
-const name =
-document.getElementById(
-"programName"
-).value.trim();
-
-const date =
-document.getElementById(
-"programDate"
-).value;
-
-const time =
-document.getElementById(
-"programTime"
-).value;
-
-const description =
-document.getElementById(
-"programDescription"
-).value.trim();
-
-if(!name){
-
-alert(
-"Please enter the program name."
-);
-
-return;
-
-}
-
-programs.push({
-
-name:name,
-date:date,
-time:time,
-description:
-description || "Festival program"
-
-});
-
-savePrograms();
-
-document.getElementById(
-"programName"
-).value="";
-
-document.getElementById(
-"programDate"
-).value="";
-
-document.getElementById(
-"programTime"
-).value="";
-
-document.getElementById(
-"programDescription"
-).value="";
-
-alert(
-"Festival program added successfully."
-);
-
-}
-
-
-function editProgram(index){
-
-const p=programs[index];
-
-const name =
-prompt(
-"Program Name:",
-p.name
-);
-
-if(name===null)return;
-
-const date =
-prompt(
-"Date (YYYY-MM-DD):",
-p.date
-);
-
-if(date===null)return;
-
-const time =
-prompt(
-"Time:",
-p.time
-);
-
-if(time===null)return;
-
-const description =
-prompt(
-"Description:",
-p.description
-);
-
-if(description===null)return;
-
-if(!name.trim()){
-
-alert(
-"Program name is required."
-);
-
-return;
-
-}
-
-programs[index]={
-
-name:name.trim(),
-date:date.trim(),
-time:time.trim(),
-description:description.trim()
-
-};
-
-savePrograms();
-
-}
-
-
-function deleteProgram(index){
-
-if(!confirm(
-"Are you sure you want to delete this festival program?"
-))return;
-
-programs.splice(index,1);
-
-savePrograms();
-
-}
-
-
-function clearPrograms(){
-
-if(!confirm(
-"Delete ALL festival programs?"
-))return;
-
-programs=[];
-
-savePrograms();
-
-}
-
-
-function savePrograms(){
-
-localStorage.setItem(
-"vcPrograms",
-JSON.stringify(programs)
-);
-
-displayPrograms();
-
-}
-
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-function saveContact(){
-
-const address =
-document.getElementById(
-"editAddress"
-).value.trim();
-
-const phone =
-document.getElementById(
-"editPhone"
-).value.trim();
-
-const email =
-document.getElementById(
-"editEmail"
-).value.trim();
-
-localStorage.setItem(
-"vcAddress",
-address
-);
-
-localStorage.setItem(
-"vcPhone",
-phone
-);
-
-localStorage.setItem(
-"vcEmail",
-email
-);
-
-loadContact();
-
-alert(
-"Contact information saved successfully."
-);
-
-}
-
-
-function loadContact(){
-
-const address =
-localStorage.getItem("vcAddress") ||
-"Thotatapalli, Andhra Pradesh";
-
-const phone =
-localStorage.getItem("vcPhone") ||
-"+91 XXXXXXXXXX";
-
-const email =
-localStorage.getItem("vcEmail") ||
-"vinayakachavithicommittee@gmail.com";
-
-document.getElementById(
-"addressText"
-).innerText=address;
-
-document.getElementById(
-"phoneText"
-).innerText=phone;
-
-document.getElementById(
-"emailText"
-).innerText=email;
-
-document.getElementById(
-"editAddress"
-).value=address;
-
-document.getElementById(
-"editPhone"
-).value=phone;
-
-document.getElementById(
-"editEmail"
-).value=email;
-
-}
-
-
-/* =====================================================
-   IMAGES
-===================================================== */
-
-function changeImage(event,imageId){
-
-const file =
-event.target.files[0];
-
-if(!file)return;
-
-const reader =
-new FileReader();
-
-reader.onload=function(e){
-
-const imageData =
-e.target.result;
-
-document.getElementById(
-imageId
-).src=imageData;
-
-localStorage.setItem(
-"vc_"+imageId,
-imageData
-);
-
-document.getElementById(
-"imageStatus"
-).innerText=
-"✅ Photo updated successfully.";
-
-};
-
-reader.readAsDataURL(file);
-
-}
-
-
-function loadImages(){
-
-[
-"photo1",
-"photo2",
-"photo3",
-"photo4"
-].forEach(id=>{
-
-const saved =
-localStorage.getItem(
-"vc_"+id
-);
-
-if(saved){
-
-document.getElementById(
-id
-).src=saved;
-
-}
-
-});
-
-}
-
-
-function deleteImage(imageId){
-
-if(!confirm(
-"Delete this photo?"
-))return;
-
-localStorage.removeItem(
-"vc_"+imageId
-);
-
-const defaultImages={
-
-photo1:"ganesh.jpg",
-photo2:"festival.jpg",
-photo3:"committee.jpg",
-photo4:"pooja.jpg"
-
-};
-
-document.getElementById(
-imageId
-).src=defaultImages[imageId];
-
-document.getElementById(
-"imageStatus"
-).innerText=
-"🗑️ Saved photo removed. Default image restored.";
-
-}
-
-
-/* =====================================================
-   EXPORT BACKUP
-===================================================== */
-
-function exportData(){
-
-const backup={
-
-members:members,
-
-households:households,
-
-donations:donations,
-
-programs:programs,
-
-address:
-localStorage.getItem("vcAddress") || "",
-
-phone:
-localStorage.getItem("vcPhone") || "",
-
-email:
-localStorage.getItem("vcEmail") || ""
-
-};
-
-const data=
-JSON.stringify(
-backup,
-null,
-2
-);
-
-const blob=
-new Blob(
-[data],
-{
-type:"application/json"
-}
-);
-
-const url=
-URL.createObjectURL(blob);
-
-const link=
-document.createElement("a");
-
-link.href=url;
-
-link.download=
-"Vinayaka-Chavithi-Committee-Backup.json";
-
-link.click();
-
-URL.revokeObjectURL(url);
-
-}
-
-
-/* =====================================================
-   IMPORT BACKUP
-===================================================== */
-
-function importData(event){
-
-const file=
-event.target.files[0];
-
-if(!file)return;
-
-const reader=
-new FileReader();
-
-reader.onload=function(e){
-
-try{
-
-const backup=
-JSON.parse(e.target.result);
-
-if(backup.members)
-members=backup.members;
-
-if(backup.households)
-households=backup.households;
-
-if(backup.donations)
-donations=backup.donations;
-
-if(backup.programs)
-programs=backup.programs;
-
-localStorage.setItem(
-"vcMembers",
-JSON.stringify(members)
-);
-
-localStorage.setItem(
-"vcHouseholds",
-JSON.stringify(households)
-);
-
-localStorage.setItem(
-"vcDonations",
-JSON.stringify(donations)
-);
-
-localStorage.setItem(
-"vcPrograms",
-JSON.stringify(programs)
-);
-
-if(backup.address!==undefined)
-localStorage.setItem(
-"vcAddress",
-backup.address
-);
-
-if(backup.phone!==undefined)
-localStorage.setItem(
-"vcPhone",
-backup.phone
-);
-
-if(backup.email!==undefined)
-localStorage.setItem(
-"vcEmail",
-backup.email
-);
-
-displayMembers();
-displayHouseholds();
-displayDonations();
-displayPrograms();
-loadContact();
-
-alert(
-"✅ Backup restored successfully."
-);
-
-}
-
-catch(error){
-
-alert(
-"❌ Invalid backup file."
-);
-
-}
-
-};
-
-reader.readAsText(file);
-
-}
-
-
-/* =====================================================
-   RESET
-===================================================== */
-
-function resetAllData(){
-
-if(!confirm(
-
-"WARNING!\n\n"+
-"This will delete ALL members, households, "+
-"monthly amounts, donations, festival programs, "+
-"contacts and saved photos.\n\n"+
-"Continue?"
-
-))return;
-
-localStorage.clear();
-
-location.reload();
-
-}
-
-
-/* =====================================================
-   START APP
-===================================================== */
-
-displayMembers();
-
-displayHouseholds();
-
-displayDonations();
-
-displayPrograms();
-
-loadContact();
-
-loadImages();
-
-</script>
-
-</body>
-</html>
 ```
