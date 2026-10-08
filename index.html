@@ -1,1366 +1,392 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Vinayaka Chavithi Committee member Thotatapalli</title>
-
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f6f8;
-    color:#222;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    background:#7b1e00;
-    color:white;
-    padding:15px 5%;
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:bold;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:15px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#ffd700;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:430px;
-
-    background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("ganesh.jpg") center/cover;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    color:white;
-    padding:30px;
-}
-
-.hero h1{
-    font-size:45px;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:21px;
-    margin-bottom:25px;
-}
-
-/* ================= BUTTONS ================= */
-
-.btn{
-    display:inline-block;
-    padding:10px 15px;
-    background:#ffd700;
-    color:#222;
-    border:none;
-    border-radius:6px;
-    font-weight:bold;
-    cursor:pointer;
-    margin:4px;
-}
-
-.btn:hover{
-    background:#ffb700;
-}
-
-.edit-btn{
-    background:#2196f3;
-    color:white;
-}
-
-.delete-btn{
-    background:#d32f2f;
-    color:white;
-}
-
-.save-btn{
-    background:#2e7d32;
-    color:white;
-}
-
-.cancel-btn{
-    background:#757575;
-    color:white;
-}
-
-.add-btn{
-    background:#ff9800;
-    color:white;
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-    padding:50px 4%;
-}
-
-.section-title{
-    text-align:center;
-    color:#7b1e00;
-    margin-bottom:30px;
-    font-size:30px;
-}
-
-/* ================= CARDS ================= */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,.12);
-    text-align:center;
-}
-
-.card h3{
-    color:#7b1e00;
-    margin-bottom:10px;
-}
-
-/* ================= TABLE ================= */
-
-.table-container{
-    overflow-x:auto;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
-}
-
-th{
-    background:#7b1e00;
-    color:white;
-}
-
-th,
-td{
-    padding:9px;
-    border:1px solid #ddd;
-    text-align:center;
-    white-space:nowrap;
-}
-
-tr:nth-child(even){
-    background:#f9f9f9;
-}
-
-.action-cell{
-    min-width:180px;
-}
-
-/* ================= COMMITTEE MONTHLY TABLE ================= */
-
-.committee-monthly-table th{
-    min-width:105px;
-}
-
-.committee-monthly-table .total-column{
-    background:#fff0b3;
-    font-weight:bold;
-    color:#7b1e00;
-}
-
-.committee-monthly-table .action-cell{
-    min-width:190px;
-}
-
-/* ================= MONTH SUMMARY ================= */
-
-.month-summary{
-    margin:20px 0;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:10px;
-}
-
-.month-box{
-    background:white;
-    padding:15px;
-    border-radius:8px;
-    text-align:center;
-    box-shadow:0 2px 7px rgba(0,0,0,.1);
-}
-
-.month-box h3{
-    color:#7b1e00;
-    font-size:16px;
-}
-
-.month-box p{
-    font-size:18px;
-    font-weight:bold;
-}
-
-/* ================= FORMS ================= */
-
-.form-box{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
-    margin-bottom:25px;
-}
-
-.form-box h2{
-    color:#7b1e00;
-    margin-bottom:15px;
-}
-
-input,
-textarea,
-select{
-    width:100%;
-    padding:11px;
-    margin:7px 0 14px;
-    border:1px solid #bbb;
-    border-radius:5px;
-}
-
-textarea{
-    min-height:100px;
-}
-
-.form-row{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:10px;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.gallery-item{
-    background:white;
-    padding:10px;
-    border-radius:10px;
-    box-shadow:0 3px 8px rgba(0,0,0,.2);
-    text-align:center;
-}
-
-.gallery img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:8px;
-}
-
-.photo-buttons{
-    padding-top:8px;
-}
-
-/* ================= SUMMARY ================= */
-
-.summary{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-    margin-bottom:25px;
-}
-
-.summary-box{
-    background:white;
-    padding:20px;
-    text-align:center;
-    border-radius:10px;
-    box-shadow:0 3px 8px rgba(0,0,0,.1);
-}
-
-.summary-box h2{
-    color:#7b1e00;
-}
-
-/* ================= ADMIN ================= */
-
-.admin{
-    background:#222;
-    color:white;
-}
-
-.admin > .section-title{
-    color:#ffd700;
-}
-
-.admin .form-box{
-    color:#222;
-}
-
-/* ================= PROGRAM ================= */
-
-.program-card{
-    position:relative;
-}
-
-.program-date{
-    color:#d32f2f;
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.program-time{
-    color:#555;
-    margin-bottom:8px;
-}
-
-.program-description{
-    line-height:1.5;
-}
-
-.program-actions{
-    margin-top:15px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#7b1e00;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-
-    header{
-        flex-direction:column;
-        gap:12px;
-    }
-
-    nav{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:6px;
-    }
-
-    nav a{
-        margin-left:4px;
-        font-size:12px;
-    }
-
-    .hero h1{
-        font-size:32px;
-    }
-
-    .hero p{
-        font-size:17px;
-    }
-
-    th,
-    td{
-        font-size:12px;
-        padding:7px;
-    }
-
-    section{
-        padding:35px 3%;
-    }
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#f4f6f8;color:#222;line-height:1.5}
+header{background:#7b1e00;color:#fff;padding:15px 5%;position:sticky;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:21px;font-weight:bold}
+nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+nav a{color:#fff;text-decoration:none;font-weight:bold;font-size:14px}
+nav a:hover{color:#ffd700}
+section{padding:45px 6%}
+.section-title{text-align:center;color:#7b1e00;margin-bottom:25px;font-size:30px}
+.hero{min-height:430px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("ganesh.jpg") center/cover;display:flex;justify-content:center;align-items:center;text-align:center;color:#fff;padding:30px}
+.hero h1{font-size:44px;margin-bottom:12px}.hero p{font-size:20px;margin-bottom:15px}
+.btn{display:inline-block;padding:10px 16px;background:#ffd700;color:#222;border:0;border-radius:6px;font-weight:bold;cursor:pointer;margin:4px}
+.btn:hover{filter:brightness(.93)}
+.save-btn{background:#2e7d32;color:#fff}.delete-btn{background:#d32f2f;color:#fff}.edit-btn{background:#1976d2;color:#fff}.info-btn{background:#673ab7;color:#fff}.cancel-btn{background:#757575;color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card,.form-box,.gallery-item,.video-item,.background-item,.summary-box{background:#fff;padding:20px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+.card{text-align:center}.card h3{color:#7b1e00;margin-bottom:8px}
+.table-container{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff}
+th{background:#7b1e00;color:#fff}th,td{padding:9px;border:1px solid #ddd;text-align:center}
+tr:nth-child(even){background:#fafafa}
+input,textarea,select{width:100%;padding:10px;margin:6px 0 12px;border:1px solid #bbb;border-radius:5px}
+textarea{min-height:90px}.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.gallery,.video-gallery,.background-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.gallery-item,.video-item,.background-item{text-align:center;padding:12px}
+.gallery img,.background-item img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+.video-item video{width:100%;height:220px;background:#000;border-radius:8px}
+.gallery-title,.video-title{font-weight:bold;color:#7b1e00;margin:10px 0}
+.video-meta{font-size:12px;color:#666;margin:5px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:20px}
+.summary-box{text-align:center}.summary-box h2{color:#7b1e00}
+.admin{background:#222;color:#fff}.admin>.section-title{color:#ffd700}.admin .form-box{color:#222}
+.status{text-align:center;font-weight:bold;margin:12px}
+.small{font-size:13px;color:#666}.danger-note{background:#fff3cd;border:1px solid #ffe08a;padding:12px;border-radius:7px;margin:10px 0}
+footer{background:#7b1e00;color:#fff;text-align:center;padding:22px}
+.empty{padding:25px;text-align:center;color:#777;background:#fff;border-radius:10px}.member-summary{margin:15px 0}.member-summary .summary-box{padding:15px}
+@media(max-width:768px){header{flex-direction:column;gap:12px}.hero h1{font-size:31px}.hero p{font-size:17px}nav a{font-size:12px}th,td{font-size:12px;padding:6px}.video-item video{height:200px}}
 </style>
-
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
-
-<div class="logo">
-🕉️ Vinayaka Chavithi Committee
-</div>
-
+<div class="logo">🕉️ Vinayaka Chavithi Committee</div>
 <nav>
-
-<a href="#home">Home</a>
-<a href="#committee">Committee</a>
-<a href="#donations">Donations</a>
-<a href="#program">Program</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-<a href="#admin">Admin</a>
-
+<a href="#home">Home</a><a href="#committee">Committee</a><a href="#households">Households</a>
+<a href="#donations">Donations</a><a href="#program">Program</a><a href="#gallery">Gallery</a>
+<a href="#videos">Videos</a><a href="#contact">Contact</a><a href="#admin">Admin</a>
 </nav>
-
 </header>
 
+<section class="hero" id="home"><div>
+<h1>🕉️ Vinayaka Chavithi Committee</h1><p>Thotatapalli</p>
+<p>Welcome to our Vinayaka Chavithi celebrations</p>
+<a href="#program" class="btn">View Festival Program</a>
+</div></section>
 
-<!-- ================= HOME ================= -->
+<section><h2 class="section-title">🙏 About Vinayaka Chavithi</h2>
+<div class="card"><p>We warmly welcome everyone to our Vinayaka Chavithi celebrations. This website is created for managing committee members, village households, donations, festival programs, celebration photos and videos.</p><br><p><strong>🙏 Ganapati Bappa Morya! 🙏</strong></p></div>
+</section>
 
-<section class="hero" id="home">
-
-<div>
-
-<h1>
-🕉️ Vinayaka Chavithi Committee
-</h1>
-
-<p>
-Thotatapalli
-</p>
-
-<p>
-Welcome to our Vinayaka Chavithi celebrations
-</p>
-
-<a href="#program" class="btn">
-View Festival Program
-</a>
-
+<section id="committee"><h2 class="section-title">👥 Committee Members</h2>
+<div class="summary member-summary">
+<div class="summary-box"><h2 id="memberCount">0</h2><p>Total Committee Members</p></div>
+<div class="summary-box"><h2 id="memberTotalAmount">₹0</h2><p>Total Committee Amount</p></div>
 </div>
+<div class="table-container"><table><thead><tr><th>S.No</th><th>Name</th><th>Designation</th><th>Mobile</th><th>Months</th><th>Monthly Amount</th><th>Total Amount</th><th>Actions</th></tr></thead><tbody id="committeeTable"></tbody></table></div></section>
+
+<section id="households"><h2 class="section-title">🏠 Village Household List</h2>
+<div class="summary"><div class="summary-box"><h2 id="houseCount">0</h2><p>Total Households</p></div><div class="summary-box"><h2 id="houseContribution">₹0</h2><p>Total Household Contribution</p></div></div>
+<div class="table-container"><table><thead><tr><th>S.No</th><th>House No.</th><th>Family / Household</th><th>Mobile</th><th>Contribution</th><th>Actions</th></tr></thead><tbody id="householdTable"></tbody></table></div></section>
+
+<section id="donations"><h2 class="section-title">💰 Donations</h2>
+<div class="summary"><div class="summary-box"><h2 id="donorCount">0</h2><p>Total Donors</p></div><div class="summary-box"><h2 id="totalDonation">₹0</h2><p>Total Donation</p></div></div>
+<div class="table-container"><table><thead><tr><th>S.No</th><th>Donor</th><th>Mobile</th><th>Amount</th><th>Date</th><th>Reference</th><th>Actions</th></tr></thead><tbody id="donationTable"></tbody></table></div></section>
+
+<section id="program"><h2 class="section-title">📅 Festival Program</h2><div class="cards" id="programContainer"></div></section>
+
+<section id="gallery"><h2 class="section-title">📸 Photo Gallery</h2><div class="gallery" id="photoGallery"></div><p id="imageStatus" class="status"></p></section>
+
+
+<!-- MEDIA STORAGE / UPLOAD AREA -->
+<section id="media-storage">
+  <h2 class="section-title">☁️ Photos & Videos Storage</h2>
+
+  <div class="summary">
+    <div class="summary-box">
+      <h2>10,000 GB</h2>
+      <p>Target Cloud Storage</p>
+    </div>
+    <div class="summary-box">
+      <h2 id="photoCount">0</h2>
+      <p>Photos Stored in This Browser</p>
+    </div>
+    <div class="summary-box">
+      <h2 id="videoCount">0</h2>
+      <p>Videos Stored in This Browser</p>
+    </div>
+  </div>
+
+  <div class="form-box">
+    <h2>📸 Add Multiple Photos</h2>
+    <input type="file" id="multiplePhotos" accept="image/*" multiple>
+    <button class="btn save-btn" onclick="addMultiplePhotos()">📤 Add Selected Photos</button>
+    <button class="btn delete-btn" onclick="deleteAllPhotos()">🗑️ Delete All Photos</button>
+    <p  class="status"></p>
+  </div>
+
+  <div class="form-box">
+    <h2>🎬 Add Multiple Videos</h2>
+    <input type="file" id="multipleVideos" accept="video/*" multiple>
+    <button class="btn save-btn" onclick="addMultipleVideos()">📤 Add Selected Videos</button>
+    <button class="btn delete-btn" onclick="deleteAllVideos()">🗑️ Delete All Videos</button>
+    <p id="videoStatus" class="status"></p>
+    <p><strong>Tip:</strong> Large videos should be hosted in a cloud/video service for a real public website.</p>
+  </div>
+
+  <div class="form-box">
+    <h2>⚠️ Important About 10,000 GB</h2>
+    <p>
+      This HTML file cannot create 10,000 GB of free storage. Files saved with
+      <strong>localStorage</strong> stay inside the browser and have a very small storage limit.
+      The <strong>10,000 GB</strong> shown above is a target capacity label, not actual free storage.
+    </p>
+    <br>
+    <p>
+      For a real public website with up to 10 TB of photos/videos, you need a cloud-storage
+      provider or a dedicated server with that capacity. GitHub Pages is for website files,
+      not 10 TB of video storage.
+    </p>
+  </div>
+</section>
+
+<section id="videos"><h2 class="section-title">🎬 Festival Video Gallery</h2>
+<div class="danger-note"><strong>Video storage:</strong> Videos uploaded here are saved in this browser on this computer. Large videos can use a lot of browser storage. For a public website, upload videos to YouTube or another video hosting service and use their links.</div>
+<div class="video-gallery" id="videoGallery"></div><p  class="status"></p>
+</section>
+
+<section id="contact"><h2 class="section-title">📞 Contact Committee</h2>
+<div class="cards"><div class="card"><h3>📍 Address</h3><p id="addressText">Thotatapalli, Andhra Pradesh</p></div>
+<div class="card"><h3>📱 Phone</h3><p id="phoneText">+91 XXXXXXXXXX</p></div>
+<div class="card"><h3>📧 Email</h3><p id="emailText">vinayakachavithicommittee@gmail.com</p></div></div></section>
+
+<section id="admin" class="admin"><h2 class="section-title">⚙️ Admin / Edit Website</h2>
+
+<div class="form-box"><h2>👥 Add Committee Member</h2><div class="form-row">
+<div><label>Name</label><input id="memberName" placeholder="Member name"></div>
+<div><label>Designation</label><input id="memberDesignation" placeholder="President / Secretary"></div>
+<div><label>Mobile</label><input id="memberMobile" placeholder="Mobile number"></div>
+<div><label>Months</label><input id="memberMonths" type="number" min="0" placeholder="Number of months"></div>
+<div><label>Monthly Amount</label><input id="memberMonthlyAmount" type="number" min="0" placeholder="Amount per month"></div>
+</div>
+<p class="small">Total Amount is automatically calculated as <strong>Months × Monthly Amount</strong>.</p>
+<button class="btn save-btn" onclick="addMember()">➕ Add Member</button><button class="btn delete-btn" onclick="clearMembers()">🗑️ Delete All Members</button></div>
+
+<div class="form-box"><h2>🏠 Add Household</h2><div class="form-row">
+<div><label>House No.</label><input id="houseNo" placeholder="House number"></div>
+<div><label>Family Name</label><input id="familyName" placeholder="Family name"></div>
+<div><label>Mobile</label><input id="houseMobile" placeholder="Mobile"></div>
+<div><label>Contribution</label><input id="houseAmount" type="number" placeholder="Amount"></div></div>
+<button class="btn save-btn" onclick="addHousehold()">➕ Add Household</button><button class="btn delete-btn" onclick="clearHouseholds()">🗑️ Delete All Households</button></div>
+
+<div class="form-box"><h2>💰 Add Donation</h2><div class="form-row">
+<div><label>Donor Name</label><input id="donorName" placeholder="Donor name"></div><div><label>Mobile</label><input id="donorMobile" placeholder="Mobile"></div>
+<div><label>Amount</label><input id="donorAmount" type="number" placeholder="Amount"></div><div><label>Date</label><input id="donorDate" type="date"></div>
+<div><label>Reference</label><input id="donorReference" placeholder="Receipt / UPI reference"></div></div>
+<button class="btn save-btn" onclick="addDonation()">➕ Add Donation</button><button class="btn delete-btn" onclick="clearDonations()">🗑️ Delete All Donations</button></div>
+
+<div class="form-box"><h2>📅 Edit Festival Program</h2><div class="form-row">
+<div><label>Program Title</label><input id="programTitle" placeholder="Ganesh Installation"></div>
+<div><label>Program Description</label><input id="programDescription" placeholder="Program details"></div></div>
+<button class="btn save-btn" onclick="addProgram()">➕ Add Program</button><button class="btn delete-btn" onclick="clearPrograms()">🗑️ Delete All Programs</button>
+<br><br><div class="table-container"><table><thead><tr><th>S.No</th><th>Program</th><th>Description</th><th>Actions</th></tr></thead><tbody id="programAdminTable"></tbody></table></div></div>
+
+<div class="form-box"><h2>📸 Add Multiple Photos</h2><p>Select one or many photos.</p>
+<input type="file" id="multiplePhotos" accept="image/*" multiple>
+<button class="btn save-btn" onclick="addMultiplePhotos()">📸 Add Selected Photos</button>
+<button class="btn delete-btn" onclick="deleteAllPhotos()">🗑️ Delete All Photos</button>
+</div>
+
+<div class="form-box"><h2>🎬 Add / Edit Multiple Videos</h2>
+<p>Select <strong>one or many videos</strong> at the same time. Each video will appear in the public Video Gallery.</p>
+<input type="file" id="multipleVideos" accept="video/*" multiple>
+<button class="btn save-btn" onclick="addMultipleVideos()">🎬 Upload Selected Videos</button>
+<button class="btn delete-btn" onclick="deleteAllVideos()">🗑️ Delete All Videos</button>
+<p id="videoAdminStatus" class="status"></p>
+<br><div class="table-container"><table><thead><tr><th>S.No</th><th>Video Preview</th><th>Title</th><th>Actions</th></tr></thead><tbody id="videoAdminTable"></tbody></table></div>
+</div>
+
+<div class="form-box"><h2>🖼️ Hero / Background Images</h2><p>Add multiple images. The home page can automatically change between them.</p>
+<input type="file" id="backgroundFiles" accept="image/*" multiple>
+<button class="btn save-btn" onclick="addBackgroundImages()">🖼️ Add Background Images</button>
+<button class="btn info-btn" onclick="useNextBackground()">🔄 Next Background</button>
+<button class="btn delete-btn" onclick="deleteAllBackgrounds()">🗑️ Delete All Backgrounds</button>
+<br><br><div class="background-gallery" id="backgroundAdminGallery"></div></div>
+
+<div class="form-box"><h2>📞 Edit Contact Information</h2>
+<label>Address</label><textarea id="editAddress"></textarea><label>Phone</label><input id="editPhone"><label>Email</label><input id="editEmail">
+<button class="btn save-btn" onclick="saveContact()">💾 Save Contact</button></div>
+
+<div class="form-box"><h2>💾 Website Data Backup</h2><p>Download your saved website data and media as a JSON backup. You can import it again on this browser.</p>
+<button class="btn save-btn" onclick="exportData()">⬇️ Download Backup</button>
+<input type="file" id="importFile" accept=".json" onchange="importData(event)">
+</div>
+
+<div class="form-box"><h2>⚠️ Reset Website Data</h2><p>This removes saved members, households, donations, programs, photos, videos, backgrounds and contact data from this browser.</p>
+<button class="btn delete-btn" onclick="resetAllData()">⚠️ Reset All Website Data</button></div>
 
 </section>
 
-
-<!-- ================= ABOUT ================= -->
-
-<section>
-
-<h2 class="section-title">
-🙏 About Vinayaka Chavithi
-</h2>
-
-<div class="card">
-
-<p>
-We warmly welcome everyone to our Vinayaka Chavithi celebrations.
-This website/app is created for managing committee members,
-monthly contributions, donations, festival programs and
-celebration photos.
-</p>
-
-<br>
-
-<p>
-<strong>
-🙏 Ganapati Bappa Morya! 🙏
-</strong>
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ================= COMMITTEE ================= -->
-
-<section id="committee">
-
-<h2 class="section-title">
-👥 Committee Members & Monthly Contributions
-</h2>
-
-
-<!-- COMMITTEE SUMMARY -->
-
-<div class="summary">
-
-<div class="summary-box">
-<h2 id="memberCount">0</h2>
-<p>Total Committee Members</p>
-</div>
-
-<div class="summary-box">
-<h2 id="memberContribution">₹0</h2>
-<p>Total Annual Contribution</p>
-</div>
-
-</div>
-
-
-
-
-<!-- COMMITTEE MONTHLY TABLE -->
-
-<div class="table-container">
-
-<table class="committee-monthly-table">
-
-<thead>
-
-<tr>
-
-<th>S.No</th>
-<th>Name</th>
-<th>Designation</th>
-<th>Mobile Number</th>
-
-<th>January</th>
-<th>February</th>
-<th>March</th>
-<th>April</th>
-<th>May</th>
-<th>June</th>
-<th>July</th>
-<th>August</th>
-<th>September</th>
-<th>October</th>
-<th>November</th>
-<th>December</th>
-
-<th>Total</th>
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="committeeTable"></tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<!-- ================= DONATIONS ================= -->
-
-<section id="donations">
-
-<h2 class="section-title">
-💰 Donations
-</h2>
-
-<div class="summary">
-
-<div class="summary-box">
-<h2 id="donorCount">0</h2>
-<p>Total Donors</p>
-</div>
-
-<div class="summary-box">
-<h2 id="totalDonation">₹0</h2>
-<p>Total Donation</p>
-</div>
-
-</div>
-
-<div class="table-container">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>S.No</th>
-<th>Donor Name</th>
-<th>Mobile</th>
-<th>Amount</th>
-<th>Date</th>
-<th>Reference</th>
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="donationTable"></tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<!-- ================= PROGRAM ================= -->
-
-<section id="program">
-
-<h2 class="section-title">
-📅 Festival Program
-</h2>
-
-<div id="programContainer" class="cards"></div>
-
-</section>
-
-
-<!-- ================= GALLERY ================= -->
-
-<section id="gallery">
-
-<h2 class="section-title">
-📸 Gallery
-</h2>
-
-<div class="gallery">
-
-<div class="gallery-item">
-
-<img id="photo1"
-src="ganesh.jpg"
-alt="Vinayaka">
-
-<div class="photo-buttons">
-
-<input
-type="file"
-id="file1"
-accept="image/*"
-onchange="changeImage(event,'photo1')">
-
-<br>
-
-<button
-class="btn delete-btn"
-onclick="deleteImage('photo1')">
-
-🗑️ Delete Photo
-
-</button>
-
-</div>
-
-</div>
-
-
-<div class="gallery-item">
-
-<img id="photo2"
-src="festival.jpg"
-alt="Festival">
-
-<div class="photo-buttons">
-
-<input
-type="file"
-id="file2"
-accept="image/*"
-onchange="changeImage(event,'photo2')">
-
-<br>
-
-<button
-class="btn delete-btn"
-onclick="deleteImage('photo2')">
-
-🗑️ Delete Photo
-
-</button>
-
-</div>
-
-</div>
-
-
-<div class="gallery-item">
-
-<img id="photo3"
-src="committee.jpg"
-alt="Committee">
-
-<div class="photo-buttons">
-
-<input
-type="file"
-id="file3"
-accept="image/*"
-onchange="changeImage(event,'photo3')">
-
-<br>
-
-<button
-class="btn delete-btn"
-onclick="deleteImage('photo3')">
-
-🗑️ Delete Photo
-
-</button>
-
-</div>
-
-</div>
-
-
-<div class="gallery-item">
-
-<img id="photo4"
-src="pooja.jpg"
-alt="Pooja">
-
-<div class="photo-buttons">
-
-<input
-type="file"
-id="file4"
-accept="image/*"
-onchange="changeImage(event,'photo4')">
-
-<br>
-
-<button
-class="btn delete-btn"
-onclick="deleteImage('photo4')">
-
-🗑️ Delete Photo
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<p id="imageStatus"
-style="text-align:center;margin-top:20px;font-weight:bold;">
-</p>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact">
-
-<h2 class="section-title">
-📞 Contact Committee
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>
-📍 Address
-</h3>
-
-<p id="addressText">
-Thotatapalli, Andhra Pradesh
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-📱 Phone
-</h3>
-
-<p id="phoneText">
-+91 XXXXXXXXXX
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-📧 Email
-</h3>
-
-<p id="emailText">
-vinayakachavithicommittee@gmail.com
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= ADMIN ================= -->
-
-<section id="admin" class="admin">
-
-<h2 class="section-title">
-⚙️ Admin / Edit Website
-</h2>
-
-
-<!-- ================= ADD COMMITTEE MEMBER ================= -->
-
-<div class="form-box">
-
-<h2>
-👥 Add Committee Member
-</h2>
-
-<div class="form-row">
-
-<div>
-<label>Name</label>
-
-<input
-type="text"
-id="memberName"
-placeholder="Member name">
-
-</div>
-
-
-<div>
-
-<label>Designation</label>
-
-<input
-type="text"
-id="memberDesignation"
-placeholder="President / Secretary">
-
-</div>
-
-
-<div>
-
-<label>Mobile</label>
-
-<input
-type="text"
-id="memberMobile"
-placeholder="Mobile number">
-
-</div>
-
-</div>
-
-
-<h3 style="margin:15px 0;color:#7b1e00;">
-💰 Monthly Contributions
-</h3>
-
-
-<div class="form-row">
-
-<div>
-<label>October2026</label>
-<input type="number" id="jan" value="0" min="0">
-</div>
-
-<div>
-<label>November2026</label>
-<input type="number" id="feb" value="0" min="0">
-</div>
-
-<div>
-<label>December2026</label>
-<input type="number" id="mar" value="0" min="0">
-</div>
-
-<div>
-<label>january2027</label>
-<input type="number" id="apr" value="0" min="0">
-</div>
-
-<div>
-<label>February2027</label>
-<input type="number" id="may" value="0" min="0">
-</div>
-
-<div>
-<label>March2027</label>
-<input type="number" id="jun" value="0" min="0">
-</div>
-
-<div>
-<label>April2027</label>
-<input type="number" id="jul" value="0" min="0">
-</div>
-
-<div>
-<label>May2027</label>
-<input type="number" id="aug" value="0" min="0">
-</div>
-
-<div>
-<label>June2027</label>
-<input type="number" id="sep" value="0" min="0">
-</div>
-
-<div>
-<label>July2027</label>
-<input type="number" id="oct" value="0" min="0">
-</div>
-
-<div>
-<label>August2027</label>
-<input type="number" id="nov" value="0" min="0">
-</div>
-
-<div>
-<label>September2027</label>
-<input type="number" id="dec" value="0" min="0">
-</div>
-
-</div>
-
-
-<br>
-
-<button
-class="btn save-btn"
-onclick="addMember()">
-
-➕ Add Member
-
-</button>
-
-<button
-class="btn delete-btn"
-onclick="clearMembers()">
-
-🗑️ Delete All Members
-
-</button>
-
-</div>
-
-
-<!-- ================= ADD DONATION ================= -->
-
-<div class="form-box">
-
-<h2>
-💰 Add Donation
-</h2>
-
-<div class="form-row">
-
-<div>
-
-<label>Donor Name</label>
-
-<input
-type="text"
-id="donorName"
-placeholder="Donor name">
-
-</div>
-
-<div>
-
-<label>Mobile</label>
-
-<input
-type="text"
-id="donorMobile"
-placeholder="Mobile">
-
-</div>
-
-<div>
-
-<label>Amount</label>
-
-<input
-type="number"
-id="donorAmount"
-placeholder="Amount">
-
-</div>
-
-<div>
-
-<label>Date</label>
-
-<input
-type="date"
-id="donorDate">
-
-</div>
-
-<div>
-
-<label>Reference</label>
-
-<input
-type="text"
-id="donorReference"
-placeholder="Receipt / UPI reference">
-
-</div>
-
-</div>
-
-<button
-class="btn save-btn"
-onclick="addDonation()">
-
-➕ Add Donation
-
-</button>
-
-<button
-class="btn delete-btn"
-onclick="clearDonations()">
-
-🗑️ Delete All Donations
-
-</button>
-
-</div>
-
-
-<!-- ================= FESTIVAL PROGRAM ADMIN ================= -->
-
-<div class="form-box">
-
-<h2>
-📅 Add / Edit Festival Program
-</h2>
-
-<div class="form-row">
-
-<div>
-
-<label>Program Name</label>
-
-<input
-type="text"
-id="programName"
-placeholder="Example: Ganesh Installation">
-
-</div>
-
-<div>
-
-<label>Date</label>
-
-<input
-type="date"
-id="programDate">
-
-</div>
-
-<div>
-
-<label>Time</label>
-
-<input
-type="time"
-id="programTime">
-
-</div>
-
-</div>
-
-<label>Description</label>
-
-<textarea
-id="programDescription"
-placeholder="Enter festival program details"></textarea>
-
-<button
-class="btn save-btn"
-onclick="addProgram()">
-
-➕ Add Program
-
-</button>
-
-<button
-class="btn delete-btn"
-onclick="clearPrograms()">
-
-🗑️ Delete All Programs
-
-</button>
-
-</div>
-
-
-<!-- ================= CONTACT EDIT ================= -->
-
-<div class="form-box">
-
-<h2>
-📞 Edit Contact Information
-</h2>
-
-<label>Address</label>
-
-<textarea id="editAddress"></textarea>
-
-<label>Phone</label>
-
-<input
-type="text"
-id="editPhone">
-
-<label>Email</label>
-
-<input
-type="text"
-id="editEmail">
-
-<button
-class="btn save-btn"
-onclick="saveContact()">
-
-💾 Save Contact
-
-</button>
-
-</div>
-
-
-<!-- ================= DATA BACKUP ================= -->
-
-<div class="form-box">
-
-<h2>
-💾 Data Backup
-</h2>
-
-<p>
-Save a backup of your committee members,
-monthly contributions, donations, festival
-programs and contact information.
-</p>
-
-<br>
-
-<button
-class="btn save-btn"
-onclick="exportData()">
-
-⬇️ Download Backup
-
-</button>
-
-<input
-type="file"
-id="importFile"
-accept=".json"
-onchange="importData(event)">
-
-</div>
-
-
-<!-- ================= RESET ================= -->
-
-<div class="form-box">
-
-<h2>
-⚠️ Website Data
-</h2>
-
-<p>
-Use this button only if you want to remove all saved data.
-</p>
-
-<br>
-
-<button
-class="btn delete-btn"
-onclick="resetAllData()">
-
-🔄 Reset All Data
-
-</button>
-
-</div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<p>
-🙏 Ganapati Bappa Morya! 🙏
-</p>
-
-<br>
-
-<p>
-© 2026 Vinayaka Chavithi Committee - Thotatapalli
-</p>
-
-</footer>
-
+<footer>© 2026 Vinayaka Chavithi Committee - Thotatapalli. All Rights Reserved.</footer>
 
 <script>
+const KEY={members:"vcMembers",houses:"vcHouses",donations:"vcDonations",programs:"vcPrograms",photos:"vcPhotos",videos:"vcVideos",backgrounds:"vcBackgrounds",currentBg:"vcCurrentBackground",contact:"vcContact"};
 
-/* =====================================================
-   DATA
-===================================================== */
+let members=load(KEY.members,[]);
+let houses=load(KEY.houses,[]);
+let donations=load(KEY.donations,[]);
+let programs=load(KEY.programs,[]);
+let photos=load(KEY.photos,[]);
+let videos=load(KEY.videos,[]);
+let backgrounds=load(KEY.backgrounds,["ganesh.jpg"]);
+let currentBackground=Number(localStorage.getItem(KEY.currentBg)||0);
+let contact=load(KEY.contact,{address:"Thotatapalli, Andhra Pradesh",phone:"+91 XXXXXXXXXX",email:"vinayakachavithicommittee@gmail.com"});
 
-let members =
-JSON.parse(localStorage.getItem("vcMembers")) || [];
+function load(k,d){try{const x=localStorage.getItem(k);return x?JSON.parse(x):d}catch(e){return d}}
+function save(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function money(n){return "₹"+Number(n||0).toLocaleString("en-IN")}
 
-let donations =
-JSON.parse(localStorage.getItem("vcDonations")) || [];
+function memberTotal(m){return (Number(m.months)||0)*(Number(m.monthlyAmount)||0)}
+function renderMembers(){
+ const t=document.getElementById("committeeTable");t.innerHTML="";let total=0;
+ if(!members.length){t.innerHTML='<tr><td colspan="8" class="empty">No committee members added.</td></tr>';}
+ members.forEach((m,i)=>{
+   const amount=memberTotal(m); total+=amount;
+   t.innerHTML+=`<tr><td>${i+1}</td><td>${esc(m.name)}</td><td>${esc(m.designation)}</td><td>${esc(m.mobile)}</td><td>${Number(m.months)||0}</td><td>${money(m.monthlyAmount)}</td><td><strong>${money(amount)}</strong></td><td><button class="btn edit-btn" onclick="editMember(${i})">✏️ Edit</button><button class="btn delete-btn" onclick="deleteMember(${i})">🗑️ Delete</button></td></tr>`;
+ });
+ const mc=document.getElementById("memberCount"),mt=document.getElementById("memberTotalAmount");
+ if(mc)mc.textContent=members.length;
+ if(mt)mt.textContent=money(total);
+}
+function addMember(){
+ const name=memberName.value.trim(),designation=memberDesignation.value.trim(),mobile=memberMobile.value.trim();
+ const months=Number(memberMonths.value)||0,monthlyAmount=Number(memberMonthlyAmount.value)||0;
+ if(!name||!designation){alert("Please enter name and designation.");return}
+ members.push({name,designation,mobile,months,monthlyAmount});
+ save(KEY.members,members);renderMembers();
+ memberName.value=memberDesignation.value=memberMobile.value=memberMonths.value=memberMonthlyAmount.value="";
+}
+function editMember(i){
+ const m=members[i];
+ const n=prompt("Member name:",m.name);if(n===null)return;
+ const d=prompt("Designation:",m.designation);if(d===null)return;
+ const mob=prompt("Mobile:",m.mobile||"");if(mob===null)return;
+ const mo=prompt("Number of months:",m.months??0);if(mo===null)return;
+ const amt=prompt("Monthly amount:",m.monthlyAmount??0);if(amt===null)return;
+ members[i]={name:n.trim(),designation:d.trim(),mobile:mob.trim(),months:Math.max(0,Number(mo)||0),monthlyAmount:Math.max(0,Number(amt)||0)};
+ save(KEY.members,members);renderMembers();
+}
+function deleteMember(i){if(confirm("Delete this member?")){members.splice(i,1);save(KEY.members,members);renderMembers()}}
+function clearMembers(){if(confirm("Delete ALL members?")){members=[];save(KEY.members,members);renderMembers()}}
 
-let programs =
-JSON.parse(localStorage.getItem("vcPrograms")) || [
+function renderHouses(){
+const t=document.getElementById("householdTable");t.innerHTML="";let total=0;
+houses.forEach((h,i)=>{total+=Number(h.amount)||0;t.innerHTML+=`<tr><td>${i+1}</td><td>${esc(h.no)}</td><td>${esc(h.family)}</td><td>${esc(h.mobile)}</td><td>${money(h.amount)}</td><td><button class="btn edit-btn" onclick="editHouse(${i})">✏️ Edit</button><button class="btn delete-btn" onclick="deleteHouse(${i})">🗑️ Delete</button></td></tr>`});
+if(!houses.length)t.innerHTML='<tr><td colspan="6" class="empty">No households added.</td></tr>';
+houseCount.textContent=houses.length;houseContribution.textContent=money(total);
+}
+function addHousehold(){
+if(!houseNo.value.trim()||!familyName.value.trim()){alert("Please enter house number and family name.");return}
+houses.push({no:houseNo.value.trim(),family:familyName.value.trim(),mobile:houseMobile.value.trim(),amount:Number(houseAmount.value)||0});
+save(KEY.houses,houses);renderHouses();houseNo.value=familyName.value=houseMobile.value=houseAmount.value="";
+}
+function editHouse(i){const h=houses[i];const no=prompt("House No.:",h.no);if(no===null)return;const f=prompt("Family:",h.family);if(f===null)return;const m=prompt("Mobile:",h.mobile);if(m===null)return;const a=prompt("Contribution:",h.amount);if(a===null)return;houses[i]={no,family:f,mobile:m,amount:Number(a)||0};save(KEY.houses,houses);renderHouses()}
+function deleteHouse(i){if(confirm("Delete this household?")){houses.splice(i,1);save(KEY.houses,houses);renderHouses()}}
+function clearHouseholds(){if(confirm("Delete ALL households?")){houses=[];save(KEY.houses,houses);renderHouses()}}
 
-{
-name:"🙏 Ganesh Installation",
-date:"",
-time:"",
-description:"Morning Pooja and Ganesh Pratishta"
-},
+function renderDonations(){
+const t=document.getElementById("donationTable");t.innerHTML="";let total=0;
+donations.forEach((d,i)=>{total+=Number(d.amount)||0;t.innerHTML+=`<tr><td>${i+1}</td><td>${esc(d.name)}</td><td>${esc(d.mobile)}</td><td>${money(d.amount)}</td><td>${esc(d.date)}</td><td>${esc(d.ref)}</td><td><button class="btn edit-btn" onclick="editDonation(${i})">✏️ Edit</button><button class="btn delete-btn" onclick="deleteDonation(${i})">🗑️ Delete</button></td></tr>`});
+if(!donations.length)t.innerHTML='<tr><td colspan="7" class="empty">No donations added.</td></tr>';
+donorCount.textContent=donations.length;totalDonation.textContent=money(total);
+}
+function addDonation(){
+if(!donorName.value.trim()||!donorAmount.value){alert("Please enter donor name and amount.");return}
+donations.push({name:donorName.value.trim(),mobile:donorMobile.value.trim(),amount:Number(donorAmount.value)||0,date:donorDate.value,ref:donorReference.value.trim()});
+save(KEY.donations,donations);renderDonations();donorName.value=donorMobile.value=donorAmount.value=donorDate.value=donorReference.value="";
+}
+function editDonation(i){const d=donations[i];const n=prompt("Donor:",d.name);if(n===null)return;const a=prompt("Amount:",d.amount);if(a===null)return;const m=prompt("Mobile:",d.mobile);if(m===null)return;const dt=prompt("Date:",d.date);if(dt===null)return;const r=prompt("Reference:",d.ref);if(r===null)return;donations[i]={name:n,mobile:m,amount:Number(a)||0,date:dt,ref:r};save(KEY.donations,donations);renderDonations()}
+function deleteDonation(i){if(confirm("Delete this donation?")){donations.splice(i,1);save(KEY.donations,donations);renderDonations()}}
+function clearDonations(){if(confirm("Delete ALL donations?")){donations=[];save(KEY.donations,donations);renderDonations()}}
 
-{
-name:"🪔 Daily Pooja",
-date:"",
-time:"",
-description:"Daily Ganesh Pooja and Aarti"
-},
+function renderPrograms(){
+const c=document.getElementById("programContainer"),t=document.getElementById("programAdminTable");c.innerHTML="";t.innerHTML="";
+if(!programs.length)c.innerHTML='<div class="empty">No festival programs added.</div>';
+programs.forEach((p,i)=>{c.innerHTML+=`<div class="card"><h3>📅 ${esc(p.title)}</h3><p>${esc(p.description)}</p></div>`;t.innerHTML+=`<tr><td>${i+1}</td><td>${esc(p.title)}</td><td>${esc(p.description)}</td><td><button class="btn edit-btn" onclick="editProgram(${i})">✏️ Edit</button><button class="btn delete-btn" onclick="deleteProgram(${i})">🗑️ Delete</button></td></tr>`});
+}
+function addProgram(){if(!programTitle.value.trim()){alert("Enter program title.");return}programs.push({title:programTitle.value.trim(),description:programDescription.value.trim()});save(KEY.programs,programs);renderPrograms();programTitle.value=programDescription.value=""}
+function editProgram(i){const t=prompt("Program:",programs[i].title);if(t===null)return;const d=prompt("Description:",programs[i].description);if(d===null)return;programs[i]={title:t,description:d};save(KEY.programs,programs);renderPrograms()}
+function deleteProgram(i){if(confirm("Delete this program?")){programs.splice(i,1);save(KEY.programs,programs);renderPrograms()}}
+function clearPrograms(){if(confirm("Delete ALL programs?")){programs=[];save(KEY.programs,programs);renderPrograms()}}
 
-{
-name:"🎭 Cultural Program",
-date:"",
-time:"",
-description:"Devotional and cultural activities"
-},
 
-{
-name:"🍚 Annadanam",
-date:"",
-time:"",
-description:"Community food distribution"
-},
-
-{
-name:"🥁 Nimajjanam",
-date:"",
-time:"",
-description:"Ganesh Visarjan procession"
+function updateMediaCounts() {
+  const pc = document.getElementById("photoCount");
+  const vc = document.getElementById("videoCount");
+  if (pc) pc.innerText = Array.isArray(photos) ? photos.length : 0;
+  if (vc) vc.innerText = Array.isArray(videos) ? videos.length : 0;
 }
 
-];
+function addMultiplePhotos(){
+const files=[...multiplePhotos.files];if(!files.length){alert("Please select one or more photos.");return}
+let done=0;files.forEach(file=>{const r=new FileReader();r.onload=e=>{photos.push({title:file.name.replace(/\.[^/.]+$/,""),data:e.target.result});done++;if(done===files.length){save(KEY.photos,photos);renderPhotos();multiplePhotos.value="";imageStatus.textContent="✅ "+files.length+" photo(s) added successfully."}};r.readAsDataURL(file)})
+}
+function renderPhotos(){
+const g=document.getElementById("photoGallery");g.innerHTML="";
+if(!photos.length){g.innerHTML='<div class="empty">No photos uploaded.</div>';return}
+photos.forEach((p,i)=>g.innerHTML+=`<div class="gallery-item"><img src="${p.data}" alt="${esc(p.title)}"><div class="gallery-title">${esc(p.title)}</div></div>`);
+}
+function deleteAllPhotos(){if(confirm("Delete ALL photos?")){photos=[];save(KEY.photos,photos);renderPhotos();imageStatus.textContent="🗑️ All photos deleted."}}
+function editPhoto(i){const t=prompt("Photo title:",photos[i].title);if(t===null)return;photos[i].title=t.trim()||photos[i].title;save(KEY.photos,photos);renderPhotos()}
 
-localStorage.setItem(
-"vcPrograms",
-JSON.stringify(programs)
-);
-
-
-/* =====================================================
-   MONTHS
-===================================================== */
-
-const months = [
-"jan",
-"feb",
-"mar",
-"apr",
-"may",
-"jun",
-"jul",
-"aug",
-"sep",
-"oct",
-"nov",
-"dec"
-];
-
-const monthLabels = [
-"January",
-"February",
-"March",
-"April",
-"May",
-"June",
-"July",
-"August",
-"September",
-"October",
-"November",
-"December"
-];
-
-
-/* =====================================================
-   SECURITY
-===================================================== */
-
-function escapeHTML(value){
-
-return String(value ?? "")
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
+function addMultipleVideos(){
+const files=[...multipleVideos.files];if(!files.length){alert("Please select one or more video files.");return}
+let done=0;
+Array.from(files).forEach(file=>{
+const reader=new FileReader();
+reader.onload=e=>{
+videos.push({title:file.name.replace(/\.[^/.]+$/,""),data:e.target.result,type:file.type,size:file.size});
+done++;
+if(done===files.length){
+try{save(KEY.videos,videos)}catch(err){alert("Storage is full. Try smaller videos or fewer videos.");return}
+renderVideos();multipleVideos.value="";videoStatus.textContent="✅ "+files.length+" video(s) added successfully.";videoAdminStatus.textContent="✅ Videos uploaded. You can edit titles or delete individual videos below.";
+}};
+reader.readAsDataURL(file);
+});
 }
 
-
-/* =====================================================
-   FORMAT MONEY
-===================================================== */
-
-function money(value){
-
-return "₹" +
-Number(value || 0).toLocaleString("en-IN");
-
+function renderVideos(){
+const g=document.getElementById("videoGallery"),t=document.getElementById("videoAdminTable");g.innerHTML="";t.innerHTML="";
+if(!videos.length){g.innerHTML='<div class="empty">No videos uploaded yet. Go to Admin → Add / Edit Multiple Videos.</div>';t.innerHTML='<tr><td colspan="4" class="empty">No videos uploaded.</td></tr>';return}
+videos.forEach((v,i)=>{
+g.innerHTML+=`<div class="video-item"><video controls preload="metadata" playsinline><source src="${v.data}" type="${esc(v.type||"video/mp4")}">Your browser does not support this video.</video><div class="video-title">${esc(v.title)}</div><div class="video-meta">${esc(v.type||"Video")} • ${formatBytes(v.size||0)}</div></div>`;
+t.innerHTML+=`<tr><td>${i+1}</td><td><video controls preload="metadata" style="width:180px;max-height:110px;background:#000"><source src="${v.data}" type="${esc(v.type||"video/mp4")}"></video></td><td>${esc(v.title)}</td><td><button class="btn edit-btn" onclick="editVideo(${i})">✏️ Edit Title</button><button class="btn delete-btn" onclick="deleteVideo(${i})">🗑️ Delete</button></td></tr>`;
+});
 }
+function editVideo(i){const title=prompt("Enter new video title:",videos[i].title);if(title===null)return;if(!title.trim()){alert("Video title cannot be empty.");return}videos[i].title=title.trim();save(KEY.videos,videos);renderVideos();videoStatus.textContent="✏️ Video title updated."}
+function deleteVideo(i){if(confirm("Delete this video?")){videos.splice(i,1);save(KEY.videos,videos);renderVideos();videoStatus.textContent="🗑️ Video deleted."}}
+function deleteAllVideos(){if(confirm("Delete ALL videos?")){videos=[];save(KEY.videos,videos);renderVideos();videoStatus.textContent="🗑️ All videos deleted.";videoAdminStatus.textContent="All videos deleted."}}
+function formatBytes(n){if(!n)return "Size unknown";const u=["B","KB","MB","GB"];let i=0,x=n;while(x>=1024&&i<u.length-1){x/=1024;i++}return x.toFixed(i?1:0)+" "+u[i]}
 
-
-/* =====================================================
-   GET MEMBER MONTHS
-===================================================== */
-
-function getMemberMonths(member){
-
-return months.map(
-month => Number(member[month] || 0)
-);
-
+function addBackgroundImages(){
+const files=[...backgroundFiles.files];if(!files.length){alert("Please select background images.");return}
+let done=0;files.forEach(file=>{const r=new FileReader();r.onload=e=>{backgrounds.push(e.target.result);done++;if(done===files.length){save(KEY.backgrounds,backgrounds);renderBackgrounds();backgroundFiles.value="";setBackground(backgrounds.length-files.length);}};r.readAsDataURL(file)})
 }
+function renderBackgrounds(){
+const g=document.getElementById("backgroundAdminGallery");g.innerHTML="";
+backgrounds.forEach((b,i)=>g.innerHTML+=`<div class="background-item"><img src="${b}" alt="Background ${i+1}"><p><strong>Background ${i+1}</strong></p><button class="btn info-btn" onclick="setBackground(${i})">⭐ Use This</button><button class="btn delete-btn" onclick="deleteBackground(${i})">🗑️ Delete</button></div>`);
+}
+function setBackground(i){if(!backgrounds[i])return;currentBackground=i;document.querySelector(".hero").style.backgroundImage=`linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("${backgrounds[i]}")`;localStorage.setItem(KEY.currentBg,i)}
+function useNextBackground(){if(!backgrounds.length)return;setBackground((currentBackground+1)%backgrounds.length)}
+function deleteBackground(i){if(!confirm("Delete this background image?"))return;backgrounds.splice(i,1);if(!backgrounds.length)backgrounds=["ganesh.jpg"];currentBackground=Math.min(currentBackground,backgrounds.length-1);save(KEY.backgrounds,backgrounds);renderBackgrounds();setBackground(currentBackground)}
+function deleteAllBackgrounds(){if(confirm("Delete ALL background images and restore default ganesh.jpg?")){backgrounds=["ganesh.jpg"];currentBackground=0;save(KEY.backgrounds,backgrounds);renderBackgrounds();setBackground(0)}}
 
-```
+function renderContact(){addressText.textContent=contact.address;phoneText.textContent=contact.phone;emailText.textContent=contact.email;editAddress.value=contact.address;editPhone.value=contact.phone;editEmail.value=contact.email}
+function saveContact(){contact={address:editAddress.value.trim(),phone:editPhone.value.trim(),email:editEmail.value.trim()};save(KEY.contact,contact);renderContact();alert("✅ Contact information saved.")}
+
+function exportData(){
+const data={version:1,exportedAt:new Date().toISOString(),members,houses,donations,programs,photos,videos,backgrounds,currentBackground,contact};
+const blob=new Blob([JSON.stringify(data)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="vinayaka-chavithi-website-backup.json";a.click();URL.revokeObjectURL(a.href);
+}
+function importData(e){
+const file=e.target.files[0];if(!file)return;const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);if(!confirm("Import backup and replace current saved data?"))return;
+members=d.members||[];houses=d.houses||[];donations=d.donations||[];programs=d.programs||[];photos=d.photos||[];videos=d.videos||[];backgrounds=d.backgrounds||["ganesh.jpg"];currentBackground=Number(d.currentBackground||0);contact=d.contact||contact;
+save(KEY.members,members);save(KEY.houses,houses);save(KEY.donations,donations);save(KEY.programs,programs);save(KEY.photos,photos);save(KEY.videos,videos);save(KEY.backgrounds,backgrounds);save(KEY.contact,contact);localStorage.setItem(KEY.currentBg,currentBackground);
+renderAll();alert("✅ Backup imported successfully.");
+}catch(err){alert("Invalid backup file.")}};r.readAsText(file);e.target.value=""}
+function resetAllData(){if(!confirm("WARNING: Delete ALL saved website data from this browser?"))return;Object.values(KEY).forEach(k=>localStorage.removeItem(k));location.reload()}
+
+function renderAll(){renderMembers();renderHouses();renderDonations();renderPrograms();renderPhotos();renderVideos();renderBackgrounds();renderContact();setBackground(Math.min(currentBackground,backgrounds.length-1))}
+renderAll();
+updateMediaCounts();
+</script>
+</body>
+</html>
